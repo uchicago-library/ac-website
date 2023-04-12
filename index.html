@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-04-12 Wed 11:28 -->
+<!-- 2023-04-12 Wed 15:27 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Attachment Converter</title>
@@ -23,35 +23,47 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf35fedd">1. Introduction</a></li>
-<li><a href="#org0c20387">2. GitHub</a></li>
-<li><a href="#org558f9a7">3. Motivation</a></li>
+<li><a href="#org50284d2">1. Introduction</a></li>
+<li><a href="#org30fa696">2. GitHub</a></li>
+<li><a href="#org90a0f22">3. Development Team</a></li>
+<li><a href="#orgc5cbe9f">4. Installation </a>
+<ul>
+<li><a href="#org48b61a0">4.1. Build</a>
+<ul>
+<li><a href="#orga87263b">4.1.1. Install <code>opam</code></a></li>
+<li><a href="#org6bd11c2">4.1.2. Download the source</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgf35fedd" class="outline-2">
-<h2 id="orgf35fedd"><span class="section-number-2">1.</span> Introduction</h2>
+<div id="outline-container-org50284d2" class="outline-2">
+<h2 id="org50284d2"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-Attachment Converter is an open-source command-line tool for digital archivists.
-Given an email mailbox in <a href="https://en.wikipedia.org/wiki/Mbox">MBOX</a> format, it will go through and batch convert all
-the attachments in the mailbox into preservation formats, putting each one back
-into the email from which it originated.  The user can then re-open the new
-mailbox in a mail user agent, such as <a href="https://en.wikipedia.org/wiki/Apple_Mail">Apple Mail</a>, and browse through the mailbox
-the normal way.
+Attachment Converter is an open-source command-line tool for digital
+archivists.  Given an email mailbox in <a href="https://en.wikipedia.org/wiki/Mbox">MBOX</a> format, it will go through
+that mailbox and batch convert all the attachments it can into
+preservation formats, putting each one back into the email from which
+it originated.  The user can then re-open the new mailbox in a mail
+user agent, such as <a href="https://en.wikipedia.org/wiki/Apple_Mail">Apple Mail</a>, and browse through the mailbox the
+normal way.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org0c20387" class="outline-2">
-<h2 id="org0c20387"><span class="section-number-2">2.</span> GitHub</h2>
+<div id="outline-container-org30fa696" class="outline-2">
+<h2 id="org30fa696"><span class="section-number-2">2.</span> GitHub</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-We are currently in the pre-alpha phase, gearing up to our first round of user
-testing.  One the project is released, we will provide multiple out-of-the-box
-installation options.  However, as of April 2023, the only way to install
-Attachment Converter is to build it from source and then copy the binary.
+We are currently in the pre-alpha phase, gearing up to our first round
+of user testing.  One the project is released, we will provide
+multiple out-of-the-box installation options.  However, as of April
+2023, the only way to install Attachment Converter is to build it from
+source.  <a href="#org61a6111">See below</a> for installation instructions.
 </p>
 
 <p>
@@ -64,13 +76,118 @@ Our GitHub page can be found here:
 </div>
 </div>
 
-<div id="outline-container-org558f9a7" class="outline-2">
-<h2 id="org558f9a7"><span class="section-number-2">3.</span> Motivation</h2>
+<div id="outline-container-org90a0f22" class="outline-2">
+<h2 id="org90a0f22"><span class="section-number-2">3.</span> Development Team</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+This project originates from the <a href="https://www.lib.uchicago.edu">UChicago Library</a> <a href="https://dldc.lib.uchicago.edu">Digital Library
+Development Center</a>.  The current development team is:
+</p>
+
+<ul class="org-ul">
+<li><a href="https://nmmull.github.io/">Nathan Mull</a></li>
+<li><a href="https://elucidations.vercel.app/">Matt Teichman</a></li>
+</ul>
+
+<p>
+Matt has been project manager for the initial development phase and is
+getting ready to transition into the lead developer role.  Previous
+(and possibly future?) members of our illustrious dev team include:
+</p>
+
+<ul class="org-ul">
+<li><a href="https://github.com/OwenPriceSkelly">Owen Price Skelly</a></li>
+<li><a href="https://github.com/cormacd9818">Cormac Duhamel</a></li>
+</ul>
+
+<p>
+We are also grateful to <a href="https://www2.lib.uchicago.edu/keith/">Keith Waclena</a> for allowing us to tap into his
+endless wisdom regarding the email specification, UNIX systems
+programming, and the OCaml language throughout our work on this
+project.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc5cbe9f" class="outline-2">
+<h2 id="orgc5cbe9f"><span class="section-number-2">4.</span> Installation <a id="org61a6111"></a></h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Once this software is ready for official release, we will be providing
+multiple installation options across as many hardware and OS platforms
+as we can.  Currently, however, the only way to install the project is
+to build it from source, which is only a realistic option for either
+software developers or system administrators.  For ordinary users, we
+would like to make Attachment Converter available to install via one
+standard package managers and also directly as a binary upon its first
+release.  Please check back in the summer for updates!
+</p>
+
+<p>
+As we work toward our first release, here are instructions for
+building Attachment Converter from source and then installing it.
+</p>
+</div>
+
+<div id="outline-container-org48b61a0" class="outline-3">
+<h3 id="org48b61a0"><span class="section-number-3">4.1.</span> Build</h3>
+<div class="outline-text-3" id="text-4-1">
+</div>
+<div id="outline-container-orga87263b" class="outline-4">
+<h4 id="orga87263b"><span class="section-number-4">4.1.1.</span> Install <code>opam</code></h4>
+<div class="outline-text-4" id="text-4-1-1">
+<p>
+Attachment Converter is written in <a href="https://ocaml.org/">OCaml</a>, which means that in order to
+build it, you need to install the <code>opam</code> package manager, which we
+recommend doing via your operating system's package manager.  For
+example:
+</p>
+
+<p>
+Arch Linux:
+</p>
+
+<pre class="example" id="org7a07622">
+$ pacman -S opam
+</pre>
+
+<p>
+macOS:
+</p>
+
+<pre class="example" id="org40b3188">
+$ brew install opam
+</pre>
+
+<p>
+WSL Ubuntu:
+</p>
+
+<pre class="example" id="org8bd9d7d">
+$ apt install opam
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org6bd11c2" class="outline-4">
+<h4 id="org6bd11c2"><span class="section-number-4">4.1.2.</span> Download the source</h4>
+<div class="outline-text-4" id="text-4-1-2">
+<p>
+You can get the latest source straight from our <a href="https://github.com/uchicago-library/attachment-converter">GitHub page</a>:
+</p>
+
+<pre class="example" id="orgc1e69d3">
+$ cd /path/to/your/source/code
+$ git clone https://github.com/uchicago-library/attachment-converter.git
+</pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Matt Teichman</p>
-<p class="date">Created: 2023-04-12 Wed 11:28</p>
+<p class="date">Created: 2023-04-12 Wed 15:27</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

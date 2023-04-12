@@ -6,23 +6,92 @@
 
 * Introduction
 
-Attachment Converter is an open-source command-line tool for digital archivists.
-Given an email mailbox in [[https://en.wikipedia.org/wiki/Mbox][MBOX]] format, it will go through and batch convert all
-the attachments in the mailbox into preservation formats, putting each one back
-into the email from which it originated.  The user can then re-open the new
-mailbox in a mail user agent, such as [[https://en.wikipedia.org/wiki/Apple_Mail][Apple Mail]], and browse through the mailbox
-the normal way.
+Attachment Converter is an open-source command-line tool for digital
+archivists.  Given an email mailbox in [[https://en.wikipedia.org/wiki/Mbox][MBOX]] format, it will go through
+that mailbox and batch convert all the attachments it can into
+preservation formats, putting each one back into the email from which
+it originated.  The user can then re-open the new mailbox in a mail
+user agent, such as [[https://en.wikipedia.org/wiki/Apple_Mail][Apple Mail]], and browse through the mailbox the
+normal way.
 
 * GitHub
 
-We are currently in the pre-alpha phase, gearing up to our first round of user
-testing.  One the project is released, we will provide multiple out-of-the-box
-installation options.  However, as of April 2023, the only way to install
-Attachment Converter is to build it from source and then copy the binary.
+We are currently in the pre-alpha phase, gearing up to our first round
+of user testing.  One the project is released, we will provide
+multiple out-of-the-box installation options.  However, as of April
+2023, the only way to install Attachment Converter is to build it from
+source.  [[install][See below]] for installation instructions.
 
 Our GitHub page can be found here:
 
 https://github.com/uchicago-library/attachment-converter
 
-* Motivation
+* Development Team
 
+This project originates from the [[https://www.lib.uchicago.edu][UChicago Library]] [[https://dldc.lib.uchicago.edu][Digital Library
+Development Center]].  The current development team is:
+
++ [[https://nmmull.github.io/][Nathan Mull]]
++ [[https://elucidations.vercel.app/][Matt Teichman]]
+
+Matt has been project manager for the initial development phase and is
+getting ready to transition into the lead developer role.  Previous
+(and possibly future?) members of our illustrious dev team include:
+
++ [[https://github.com/OwenPriceSkelly][Owen Price Skelly]]
++ [[https://github.com/cormacd9818][Cormac Duhamel]]
+
+We are also grateful to [[https://www2.lib.uchicago.edu/keith/][Keith Waclena]] for allowing us to tap into his
+endless wisdom regarding the email specification, UNIX systems
+programming, and the OCaml language throughout our work on this
+project.
+
+* Installation <<install>>
+
+Once this software is ready for official release, we will be providing
+multiple installation options across as many hardware and OS platforms
+as we can.  Currently, however, the only way to install the project is
+to build it from source, which is only a realistic option for either
+software developers or system administrators.  For ordinary users, we
+would like to make Attachment Converter available to install via one
+standard package managers and also directly as a binary upon its first
+release.  Please check back in the summer for updates!
+
+As we work toward our first release, here are instructions for
+building Attachment Converter from source and then installing it.
+
+** Build
+
+*** Install =opam=
+
+Attachment Converter is written in [[https://ocaml.org/][OCaml]], which means that in order to
+build it, you need to install the =opam= package manager, which we
+recommend doing via your operating system's package manager.  For
+example:
+
+Arch Linux:
+
+#+begin_example
+  $ pacman -S opam
+#+end_example
+
+macOS:
+
+#+begin_example
+  $ brew install opam
+#+end_example
+
+WSL Ubuntu:
+
+#+begin_example
+  $ apt install opam
+#+end_example
+
+*** Download the source
+
+You can get the latest source straight from our [[https://github.com/uchicago-library/attachment-converter][GitHub page]]:
+
+#+begin_example
+  $ cd /path/to/your/source/code
+  $ git clone https://github.com/uchicago-library/attachment-converter.git
+#+end_example
