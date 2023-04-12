@@ -4,6 +4,25 @@
 #+Author: Matt Teichman
 #+Title: Attachment Converter
 
-* testing
+* Introduction
 
-here's some text
+Attachment Converter is an open-source command-line tool for digital archivists.
+Given an email mailbox in [[https://en.wikipedia.org/wiki/Mbox][MBOX]] format, it will go through and batch convert all
+the attachments in the mailbox into preservation formats, putting each one back
+into the email from which it originated.  The user can then re-open the new
+mailbox in a mail user agent, such as [[https://en.wikipedia.org/wiki/Apple_Mail][Apple Mail]], and browse through the mailbox
+the normal way.
+
+* GitHub
+
+We are currently in the pre-alpha phase, gearing up to our first round of user
+testing.  One the project is released, we will provide multiple out-of-the-box
+installation options.  However, as of April 2023, the only way to install
+Attachment Converter is to build it from source and then copy the binary.
+
+Our GitHub page can be found here:
+
+https://github.com/uchicago-library/attachment-converter
+
+* Motivation
+
