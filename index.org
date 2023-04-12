@@ -16,15 +16,15 @@ normal way.
 
 * GitHub
 
+Our GitHub page can be found here:
+
+https://github.com/uchicago-library/attachment-converter
+
 We are currently in the pre-alpha phase, gearing up to our first round
 of user testing.  One the project is released, we will provide
 multiple out-of-the-box installation options.  However, as of April
 2023, the only way to install Attachment Converter is to build it from
 source.  [[install][See below]] for installation instructions.
-
-Our GitHub page can be found here:
-
-https://github.com/uchicago-library/attachment-converter
 
 * Development Team
 
@@ -62,6 +62,15 @@ building Attachment Converter from source and then installing it.
 
 ** Build
 
+*** Download the source
+
+You can get the latest source straight from our [[https://github.com/uchicago-library/attachment-converter][GitHub repository]]:
+
+#+begin_example
+  $ cd /path/to/your/source/code
+  $ git clone https://github.com/uchicago-library/attachment-converter.git
+#+end_example
+
 *** Install =opam=
 
 Attachment Converter is written in [[https://ocaml.org/][OCaml]], which means that in order to
@@ -87,11 +96,41 @@ WSL Ubuntu:
   $ apt install opam
 #+end_example
 
-*** Download the source
-
-You can get the latest source straight from our [[https://github.com/uchicago-library/attachment-converter][GitHub page]]:
+Then, regardless of how you install =opam=, you need to initialize it
+in order to be able to use it.
 
 #+begin_example
-  $ cd /path/to/your/source/code
-  $ git clone https://github.com/uchicago-library/attachment-converter.git
+  $ cd ~
+  $ opam init
+  $ eval $(opam env)
+#+end_example
+
+=opam= should then print some information to the console telling you
+about the steps it's taking to initialize.
+
+*** Install =opam= dependencies
+
+To install all third-party library dependencies for Attachment
+Converter to your =~/.opam= directory (which is where =opam= put the
+OCaml compiler and other packages it's going to use when you ran =opam
+init=), please run the following =make= rule from the root directory
+of the GitHub project you cloned:
+
+#+begin_example
+  $ cd /path/to/your/source/code/attachment-converter
+  $ make deps
+#+end_example
+
+This will make [[https://dldc.lib.uchicago.edu/opam][the DLDC's very own =opam= repository]] available to you,
+then install all of Attachment Converter's third-party library
+dependencies.
+
+*** Install OS-level dependencies
+
+First, install Attachment Converter's OS-level dependencies.  For
+example:
+
+Arch Linux:
+#+begin_example
+  $ pacman -S libreoffice pdftotext pandoc vips
 #+end_example

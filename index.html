@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-04-12 Wed 15:27 -->
+<!-- 2023-04-12 Wed 16:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Attachment Converter</title>
@@ -23,15 +23,17 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org50284d2">1. Introduction</a></li>
-<li><a href="#org30fa696">2. GitHub</a></li>
-<li><a href="#org90a0f22">3. Development Team</a></li>
-<li><a href="#orgc5cbe9f">4. Installation </a>
+<li><a href="#org37777bb">1. Introduction</a></li>
+<li><a href="#org530a729">2. GitHub</a></li>
+<li><a href="#org448aaf8">3. Development Team</a></li>
+<li><a href="#orgc4268bd">4. Installation </a>
 <ul>
-<li><a href="#org48b61a0">4.1. Build</a>
+<li><a href="#org54df93c">4.1. Build</a>
 <ul>
-<li><a href="#orga87263b">4.1.1. Install <code>opam</code></a></li>
-<li><a href="#org6bd11c2">4.1.2. Download the source</a></li>
+<li><a href="#orge58a950">4.1.1. Download the source</a></li>
+<li><a href="#orgeab04a6">4.1.2. Install <code>opam</code></a></li>
+<li><a href="#orgb4a1e0e">4.1.3. Install <code>opam</code> dependencies</a></li>
+<li><a href="#orgdb28c95">4.1.4. Install OS-level dependencies</a></li>
 </ul>
 </li>
 </ul>
@@ -40,8 +42,8 @@
 </div>
 </div>
 
-<div id="outline-container-org50284d2" class="outline-2">
-<h2 id="org50284d2"><span class="section-number-2">1.</span> Introduction</h2>
+<div id="outline-container-org37777bb" class="outline-2">
+<h2 id="org37777bb"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Attachment Converter is an open-source command-line tool for digital
@@ -55,17 +57,9 @@ normal way.
 </div>
 </div>
 
-<div id="outline-container-org30fa696" class="outline-2">
-<h2 id="org30fa696"><span class="section-number-2">2.</span> GitHub</h2>
+<div id="outline-container-org530a729" class="outline-2">
+<h2 id="org530a729"><span class="section-number-2">2.</span> GitHub</h2>
 <div class="outline-text-2" id="text-2">
-<p>
-We are currently in the pre-alpha phase, gearing up to our first round
-of user testing.  One the project is released, we will provide
-multiple out-of-the-box installation options.  However, as of April
-2023, the only way to install Attachment Converter is to build it from
-source.  <a href="#org61a6111">See below</a> for installation instructions.
-</p>
-
 <p>
 Our GitHub page can be found here:
 </p>
@@ -73,11 +67,19 @@ Our GitHub page can be found here:
 <p>
 <a href="https://github.com/uchicago-library/attachment-converter">https://github.com/uchicago-library/attachment-converter</a>
 </p>
+
+<p>
+We are currently in the pre-alpha phase, gearing up to our first round
+of user testing.  One the project is released, we will provide
+multiple out-of-the-box installation options.  However, as of April
+2023, the only way to install Attachment Converter is to build it from
+source.  <a href="#orgadd3133">See below</a> for installation instructions.
+</p>
 </div>
 </div>
 
-<div id="outline-container-org90a0f22" class="outline-2">
-<h2 id="org90a0f22"><span class="section-number-2">3.</span> Development Team</h2>
+<div id="outline-container-org448aaf8" class="outline-2">
+<h2 id="org448aaf8"><span class="section-number-2">3.</span> Development Team</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 This project originates from the <a href="https://www.lib.uchicago.edu">UChicago Library</a> <a href="https://dldc.lib.uchicago.edu">Digital Library
@@ -109,8 +111,8 @@ project.
 </div>
 </div>
 
-<div id="outline-container-orgc5cbe9f" class="outline-2">
-<h2 id="orgc5cbe9f"><span class="section-number-2">4.</span> Installation <a id="org61a6111"></a></h2>
+<div id="outline-container-orgc4268bd" class="outline-2">
+<h2 id="orgc4268bd"><span class="section-number-2">4.</span> Installation <a id="orgadd3133"></a></h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Once this software is ready for official release, we will be providing
@@ -129,13 +131,27 @@ building Attachment Converter from source and then installing it.
 </p>
 </div>
 
-<div id="outline-container-org48b61a0" class="outline-3">
-<h3 id="org48b61a0"><span class="section-number-3">4.1.</span> Build</h3>
+<div id="outline-container-org54df93c" class="outline-3">
+<h3 id="org54df93c"><span class="section-number-3">4.1.</span> Build</h3>
 <div class="outline-text-3" id="text-4-1">
 </div>
-<div id="outline-container-orga87263b" class="outline-4">
-<h4 id="orga87263b"><span class="section-number-4">4.1.1.</span> Install <code>opam</code></h4>
+<div id="outline-container-orge58a950" class="outline-4">
+<h4 id="orge58a950"><span class="section-number-4">4.1.1.</span> Download the source</h4>
 <div class="outline-text-4" id="text-4-1-1">
+<p>
+You can get the latest source straight from our <a href="https://github.com/uchicago-library/attachment-converter">GitHub repository</a>:
+</p>
+
+<pre class="example" id="orgb252582">
+$ cd /path/to/your/source/code
+$ git clone https://github.com/uchicago-library/attachment-converter.git
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgeab04a6" class="outline-4">
+<h4 id="orgeab04a6"><span class="section-number-4">4.1.2.</span> Install <code>opam</code></h4>
+<div class="outline-text-4" id="text-4-1-2">
 <p>
 Attachment Converter is written in <a href="https://ocaml.org/">OCaml</a>, which means that in order to
 build it, you need to install the <code>opam</code> package manager, which we
@@ -147,7 +163,7 @@ example:
 Arch Linux:
 </p>
 
-<pre class="example" id="org7a07622">
+<pre class="example" id="orgfdaf618">
 $ pacman -S opam
 </pre>
 
@@ -155,7 +171,7 @@ $ pacman -S opam
 macOS:
 </p>
 
-<pre class="example" id="org40b3188">
+<pre class="example" id="org54aee05">
 $ brew install opam
 </pre>
 
@@ -163,22 +179,65 @@ $ brew install opam
 WSL Ubuntu:
 </p>
 
-<pre class="example" id="org8bd9d7d">
+<pre class="example" id="orga3c6291">
 $ apt install opam
 </pre>
-</div>
-</div>
 
-<div id="outline-container-org6bd11c2" class="outline-4">
-<h4 id="org6bd11c2"><span class="section-number-4">4.1.2.</span> Download the source</h4>
-<div class="outline-text-4" id="text-4-1-2">
 <p>
-You can get the latest source straight from our <a href="https://github.com/uchicago-library/attachment-converter">GitHub page</a>:
+Then, regardless of how you install <code>opam</code>, you need to initialize it
+in order to be able to use it.
 </p>
 
-<pre class="example" id="orgc1e69d3">
-$ cd /path/to/your/source/code
-$ git clone https://github.com/uchicago-library/attachment-converter.git
+<pre class="example" id="org42a8611">
+$ cd ~
+$ opam init
+$ eval $(opam env)
+</pre>
+
+<p>
+<code>opam</code> should then print some information to the console telling you
+about the steps it's taking to initialize.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb4a1e0e" class="outline-4">
+<h4 id="orgb4a1e0e"><span class="section-number-4">4.1.3.</span> Install <code>opam</code> dependencies</h4>
+<div class="outline-text-4" id="text-4-1-3">
+<p>
+To install all third-party library dependencies for Attachment
+Converter to your <code>~/.opam</code> directory (which is where <code>opam</code> put the
+OCaml compiler and other packages it's going to use when you ran <code>opam
+init</code>), please run the following <code>make</code> rule from the root directory
+of the GitHub project you cloned:
+</p>
+
+<pre class="example" id="org02734e3">
+$ cd /path/to/your/source/code/attachment-converter
+$ make deps
+</pre>
+
+<p>
+This will make <a href="https://dldc.lib.uchicago.edu/opam">the DLDC's very own <code>opam</code> repository</a> available to you,
+then install all of Attachment Converter's third-party library
+dependencies.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdb28c95" class="outline-4">
+<h4 id="orgdb28c95"><span class="section-number-4">4.1.4.</span> Install OS-level dependencies</h4>
+<div class="outline-text-4" id="text-4-1-4">
+<p>
+First, install Attachment Converter's OS-level dependencies.  For
+example:
+</p>
+
+<p>
+Arch Linux:
+</p>
+<pre class="example" id="org34d66a3">
+$ pacman -S libreoffice pdftotext pandoc vips
 </pre>
 </div>
 </div>
@@ -187,7 +246,7 @@ $ git clone https://github.com/uchicago-library/attachment-converter.git
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Matt Teichman</p>
-<p class="date">Created: 2023-04-12 Wed 15:27</p>
+<p class="date">Created: 2023-04-12 Wed 16:25</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
