@@ -6,7 +6,7 @@
 #+Title: Attachment Converter
 
 This project is currently in pre-alpha stage, but keep checking back
-for updates.  Release comingx3 in summer 2023.
+for updates.  Release coming in summer 2023.
 
 * Introduction
 
@@ -89,15 +89,14 @@ build it, you need to install the =opam= package manager, which we
 recommend doing via your operating system's package manager.  For
 example:
 
-| Arch Linux         | macOS                 | WSL Ubuntu           |
-|--------------------+-----------------------+----------------------|
-| =$ pacman -S opam= | =$ brew install opam= | =$ apt install opam= |
+| Arch Linux         | macOS                 | WSL Ubuntu                             |
+|--------------------+-----------------------+----------------------------------------|
+| =$ pacman -S opam= | =$ brew install opam= | =$ apt-get update && apt install opam= |
 
 Then, regardless of how you install =opam=, you need to initialize it
 in order to be able to use it.
 
 #+begin_example
-  $ cd ~
   $ opam init
   $ eval $(opam env)
 #+end_example
@@ -108,6 +107,16 @@ about the steps it's taking to initialize.
 That should be enough to get you going, but if you'd like more
 detailed information on how to install =opam=, please see [[http://opam.ocaml.org/doc/Install.html#Using-your-distribution-39-s-package-system][the official
 installation instructions]].
+
+*** Install Mercurial
+
+Attachment Converter relies on the Mercurial version control system to
+install some of its third-party library dependencies.  For example:
+
+| Arch Linux         | macOS                 | WSL Ubuntu                             |
+|--------------------+-----------------------+----------------------------------------|
+| =$ pacman -S hg= | =$ brew install hg= | =$ apt-get update && apt install hg= |
+
 
 *** Install =opam= dependencies
 
@@ -122,11 +131,12 @@ of the GitHub project you cloned:
   $ make deps
 #+end_example
 
-This will make the DLDC's very own =opam= repository available to you,
-then install all of Attachment Converter's third-party library
-dependencies.  =make deps= should suffice for most purposes, but if
-you'd like to pursue the slightly fancier option of creating a
-sandboxed =opam= switch, you can instead run:
+This will make the Digital Library Development Center's very own
+=opam= repository available to you, then install all of Attachment
+Converter's third-party library dependencies.  =make deps= should
+suffice for most purposes, but if you'd like to pursue the slightly
+fancier option of creating a sandboxed =opam= switch, you can instead
+run:
 
 #+begin_example
   $ cd /path/to/your/source/code/attachment-converter
