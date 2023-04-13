@@ -113,9 +113,10 @@ installation instructions]].
 Attachment Converter relies on the Mercurial version control system to
 install some of its third-party library dependencies.  For example:
 
-| Arch Linux         | macOS                 | WSL Ubuntu                             |
-|--------------------+-----------------------+----------------------------------------|
-| =$ pacman -S hg= | =$ brew install hg= | =$ apt-get update && apt install hg= |
+| Arch Linux              | macOS                      | WSL Ubuntu                                  |
+|-------------------------+----------------------------+---------------------------------------------|
+| =$ pacman -S mercurial= | =$ brew install mercurial= | =$ apt-get update && apt install mercurial= |
+|                         |                            |                                             |
 
 
 *** Install =opam= dependencies

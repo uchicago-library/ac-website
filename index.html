@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-04-13 Thu 16:45 -->
+<!-- 2023-04-13 Thu 17:31 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Attachment Converter</title>
@@ -23,25 +23,25 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org485ab1f">1. Introduction</a></li>
-<li><a href="#org83a0fa2">2. Running</a></li>
-<li><a href="#org7886ab1">3. GitHub</a></li>
-<li><a href="#org9065e6b">4. Installation </a>
+<li><a href="#orgedb124e">1. Introduction</a></li>
+<li><a href="#orgee8693f">2. Running</a></li>
+<li><a href="#org1e604d0">3. GitHub</a></li>
+<li><a href="#org235e3c4">4. Installation </a>
 <ul>
-<li><a href="#orgde70d91">4.1. Build</a>
+<li><a href="#org0e8698f">4.1. Build</a>
 <ul>
-<li><a href="#org8c3d68a">4.1.1. Download the source</a></li>
-<li><a href="#org8a9fff5">4.1.2. Install <code>opam</code></a></li>
-<li><a href="#org96aeda9">4.1.3. Install Mercurial</a></li>
-<li><a href="#org605cdb8">4.1.4. Install <code>opam</code> dependencies</a></li>
-<li><a href="#orgcd7e6f0">4.1.5. Install OS-level dependencies</a></li>
-<li><a href="#orged8c550">4.1.6. Generate Config File </a></li>
-<li><a href="#orgfc4c1d1">4.1.7. Time to Build</a></li>
+<li><a href="#org7e6be1b">4.1.1. Download the source</a></li>
+<li><a href="#org1a91a6c">4.1.2. Install <code>opam</code></a></li>
+<li><a href="#orgca148e3">4.1.3. Install Mercurial</a></li>
+<li><a href="#org9876ebf">4.1.4. Install <code>opam</code> dependencies</a></li>
+<li><a href="#orga2edabe">4.1.5. Install OS-level dependencies</a></li>
+<li><a href="#orgcfe22b8">4.1.6. Generate Config File </a></li>
+<li><a href="#orgafca981">4.1.7. Time to Build</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org47e4f11">5. Background</a></li>
+<li><a href="#org871a0c8">5. Background</a></li>
 </ul>
 </div>
 </div>
@@ -50,8 +50,8 @@ This project is currently in pre-alpha stage, but keep checking back
 for updates.  Release coming in summer 2023.
 </p>
 
-<div id="outline-container-org485ab1f" class="outline-2">
-<h2 id="org485ab1f"><span class="section-number-2">1.</span> Introduction</h2>
+<div id="outline-container-orgedb124e" class="outline-2">
+<h2 id="orgedb124e"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Attachment Converter is an open-source command-line tool for digital
@@ -65,23 +65,23 @@ through the mailbox the normal way.
 </div>
 </div>
 
-<div id="outline-container-org83a0fa2" class="outline-2">
-<h2 id="org83a0fa2"><span class="section-number-2">2.</span> Running</h2>
+<div id="outline-container-orgee8693f" class="outline-2">
+<h2 id="orgee8693f"><span class="section-number-2">2.</span> Running</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-(These instructions assume you have Attachment Converter <a href="#org3c20a42">installed</a>.)
+(These instructions assume you have Attachment Converter <a href="#org3dbdb5a">installed</a>.)
 </p>
 
 <p>
 To tell Attachment Converter where your config file is, run:
 </p>
 
-<pre class="example" id="org1e97522">
+<pre class="example" id="orgf53e37e">
 $ attc --config /path/to/your/config/file
 </pre>
 
 <p>
-For information on how to generate a config file, please see <a href="#orgec7ed7c">the
+For information on how to generate a config file, please see <a href="#orgf9ba4da">the
 relevant section of our build instructions</a>.
 </p>
 
@@ -89,7 +89,7 @@ relevant section of our build instructions</a>.
 With the config file set up, Attachment Converter can be run:
 </p>
 
-<pre class="example" id="org67a5f5d">
+<pre class="example" id="org86b2855">
 $ attc --single-email &lt; example-email.eml &gt; example-email-converted.eml
 $ attc --report &lt; example.mbox
 $ attc &lt; example.mbox &gt; example-converted.mbox
@@ -101,8 +101,8 @@ Note that the input mailbox must be in <a href="https://en.wikipedia.org/wiki/Mb
 </div>
 </div>
 
-<div id="outline-container-org7886ab1" class="outline-2">
-<h2 id="org7886ab1"><span class="section-number-2">3.</span> GitHub</h2>
+<div id="outline-container-org1e604d0" class="outline-2">
+<h2 id="org1e604d0"><span class="section-number-2">3.</span> GitHub</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Our GitHub page can be found here:
@@ -117,7 +117,7 @@ We are currently in the pre-alpha phase, gearing up to our first round
 of user testing.  Once the project is released, we will provide
 multiple out-of-the-box installation options.  However, as of April
 2023, the only way to install Attachment Converter is to build it from
-source.  <a href="#org3c20a42">See below</a> for installation instructions.
+source.  <a href="#org3dbdb5a">See below</a> for installation instructions.
 </p>
 
 <p>
@@ -127,8 +127,8 @@ our release date, so please feel free to keep checking back.
 </div>
 </div>
 
-<div id="outline-container-org9065e6b" class="outline-2">
-<h2 id="org9065e6b"><span class="section-number-2">4.</span> Installation <a id="org3c20a42"></a></h2>
+<div id="outline-container-org235e3c4" class="outline-2">
+<h2 id="org235e3c4"><span class="section-number-2">4.</span> Installation <a id="org3dbdb5a"></a></h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Once this software is ready for official release, we will be providing
@@ -148,26 +148,26 @@ building Attachment Converter from source and then installing it.
 </p>
 </div>
 
-<div id="outline-container-orgde70d91" class="outline-3">
-<h3 id="orgde70d91"><span class="section-number-3">4.1.</span> Build</h3>
+<div id="outline-container-org0e8698f" class="outline-3">
+<h3 id="org0e8698f"><span class="section-number-3">4.1.</span> Build</h3>
 <div class="outline-text-3" id="text-4-1">
 </div>
-<div id="outline-container-org8c3d68a" class="outline-4">
-<h4 id="org8c3d68a"><span class="section-number-4">4.1.1.</span> Download the source</h4>
+<div id="outline-container-org7e6be1b" class="outline-4">
+<h4 id="org7e6be1b"><span class="section-number-4">4.1.1.</span> Download the source</h4>
 <div class="outline-text-4" id="text-4-1-1">
 <p>
 You can get the latest source straight from our <a href="https://github.com/uchicago-library/attachment-converter">GitHub repository</a>:
 </p>
 
-<pre class="example" id="org910fb9d">
+<pre class="example" id="orgebce9e6">
 $ cd /path/to/your/source/code
 $ git clone https://github.com/uchicago-library/attachment-converter.git
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org8a9fff5" class="outline-4">
-<h4 id="org8a9fff5"><span class="section-number-4">4.1.2.</span> Install <code>opam</code></h4>
+<div id="outline-container-org1a91a6c" class="outline-4">
+<h4 id="org1a91a6c"><span class="section-number-4">4.1.2.</span> Install <code>opam</code></h4>
 <div class="outline-text-4" id="text-4-1-2">
 <p>
 Attachment Converter is written in <a href="https://ocaml.org/">OCaml</a>, which means that in order to
@@ -207,7 +207,7 @@ Then, regardless of how you install <code>opam</code>, you need to initialize it
 in order to be able to use it.
 </p>
 
-<pre class="example" id="orgf9aff54">
+<pre class="example" id="org60043ad">
 $ opam init
 $ eval $(opam env)
 </pre>
@@ -225,8 +225,8 @@ installation instructions</a>.
 </div>
 </div>
 
-<div id="outline-container-org96aeda9" class="outline-4">
-<h4 id="org96aeda9"><span class="section-number-4">4.1.3.</span> Install Mercurial</h4>
+<div id="outline-container-orgca148e3" class="outline-4">
+<h4 id="orgca148e3"><span class="section-number-4">4.1.3.</span> Install Mercurial</h4>
 <div class="outline-text-4" id="text-4-1-3">
 <p>
 Attachment Converter relies on the Mercurial version control system to
@@ -252,9 +252,15 @@ install some of its third-party library dependencies.  For example:
 </thead>
 <tbody>
 <tr>
-<td class="org-left"><code>$ pacman -S hg</code></td>
-<td class="org-left"><code>$ brew install hg</code></td>
-<td class="org-left"><code>$ apt-get update &amp;&amp; apt install hg</code></td>
+<td class="org-left"><code>$ pacman -S mercurial</code></td>
+<td class="org-left"><code>$ brew install mercurial</code></td>
+<td class="org-left"><code>$ apt-get update &amp;&amp; apt install mercurial</code></td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 </tbody>
 </table>
@@ -262,8 +268,8 @@ install some of its third-party library dependencies.  For example:
 </div>
 
 
-<div id="outline-container-org605cdb8" class="outline-4">
-<h4 id="org605cdb8"><span class="section-number-4">4.1.4.</span> Install <code>opam</code> dependencies</h4>
+<div id="outline-container-org9876ebf" class="outline-4">
+<h4 id="org9876ebf"><span class="section-number-4">4.1.4.</span> Install <code>opam</code> dependencies</h4>
 <div class="outline-text-4" id="text-4-1-4">
 <p>
 To install all third-party library dependencies for Attachment
@@ -273,7 +279,7 @@ init</code>), please run the following <code>make</code> rule from the root dire
 of the GitHub project you cloned:
 </p>
 
-<pre class="example" id="org45e4800">
+<pre class="example" id="orgf28854c">
 $ cd /path/to/your/source/code/attachment-converter
 $ make deps
 </pre>
@@ -287,7 +293,7 @@ fancier option of creating a sandboxed <code>opam</code> switch, you can instead
 run:
 </p>
 
-<pre class="example" id="org9fa4fa2">
+<pre class="example" id="orgad175f6">
 $ cd /path/to/your/source/code/attachment-converter
 $ make sandbox
 </pre>
@@ -299,8 +305,8 @@ worrying about it and going with the <code>make deps</code> rule.
 </div>
 </div>
 
-<div id="outline-container-orgcd7e6f0" class="outline-4">
-<h4 id="orgcd7e6f0"><span class="section-number-4">4.1.5.</span> Install OS-level dependencies</h4>
+<div id="outline-container-orga2edabe" class="outline-4">
+<h4 id="orga2edabe"><span class="section-number-4">4.1.5.</span> Install OS-level dependencies</h4>
 <div class="outline-text-4" id="text-4-1-5">
 <p>
 Next, you must install Attachment Converter's OS-level dependencies.
@@ -310,21 +316,21 @@ For example:
 <p>
 Arch Linux:
 </p>
-<pre class="example" id="orgc12ad85">
+<pre class="example" id="orgdba4117">
 $ pacman -S libreoffice pdftotext pandoc vips ghostscript verapdf
 </pre>
 
 <p>
 macOS:
 </p>
-<pre class="example" id="org8134498">
+<pre class="example" id="org7955c10">
 $ brew install libreoffice pdftotext pandoc vips ghostscript verapdf
 </pre>
 
 <p>
 WSL Ubuntu:
 </p>
-<pre class="example" id="org44c1fd0">
+<pre class="example" id="org092e3c5">
 apt install libreoffice pdftotext pandoc vips ghostscript verapdf
 </pre>
 
@@ -338,7 +344,7 @@ This is a utility for converting PDF to PDF-A-1b.
 Download <code>pdf2archive</code>:
 </p>
 
-<pre class="example" id="org4dd8691">
+<pre class="example" id="org7226ced">
 $ cd /path/to/your/source/code
 $ git clone git@github.com:matteosecli/pdf2archive.git
 $ cd pdf2archive
@@ -348,8 +354,8 @@ $ export PATH=$PATH:/path/to/your/source/code/pdf2archive
 </div>
 </div>
 
-<div id="outline-container-orged8c550" class="outline-4">
-<h4 id="orged8c550"><span class="section-number-4">4.1.6.</span> Generate Config File <a id="orgec7ed7c"></a></h4>
+<div id="outline-container-orgcfe22b8" class="outline-4">
+<h4 id="orgcfe22b8"><span class="section-number-4">4.1.6.</span> Generate Config File <a id="orgf9ba4da"></a></h4>
 <div class="outline-text-4" id="text-4-1-6">
 <p>
 Attachment Converter comes with a shell script in the root of the
@@ -360,7 +366,7 @@ project for generating its main config file.
 To generate the config file:
 </p>
 
-<pre class="example" id="org9c8a3ab">
+<pre class="example" id="orgeb62bc4">
 $ cd /path/to/your/source/code/attachment-converter
 $ ./make-config.sh &gt; /path/to/your/config/files
 </pre>
@@ -375,14 +381,14 @@ story out.
 </div>
 </div>
 
-<div id="outline-container-orgfc4c1d1" class="outline-4">
-<h4 id="orgfc4c1d1"><span class="section-number-4">4.1.7.</span> Time to Build</h4>
+<div id="outline-container-orgafca981" class="outline-4">
+<h4 id="orgafca981"><span class="section-number-4">4.1.7.</span> Time to Build</h4>
 <div class="outline-text-4" id="text-4-1-7">
 <p>
 You should now be ready to build Attachment Converter.  To build:
 </p>
 
-<pre class="example" id="orgd464a05">
+<pre class="example" id="org9c935f0">
 $ cd /path/to/your/source/code/attachment-converter
 $ make
 </pre>
@@ -392,7 +398,7 @@ You can then install Attachment Converter by copying the binary to
 wherever you keep your binaries:
 </p>
 
-<pre class="example" id="org3559b05">
+<pre class="example" id="org617904d">
 $ cd /path/to/your/source/code/attachment-converter
 $ mv _build/default/main.exe /path/to/your/binaries/attc
 </pre>
@@ -401,8 +407,8 @@ $ mv _build/default/main.exe /path/to/your/binaries/attc
 </div>
 </div>
 
-<div id="outline-container-org47e4f11" class="outline-2">
-<h2 id="org47e4f11"><span class="section-number-2">5.</span> Background</h2>
+<div id="outline-container-org871a0c8" class="outline-2">
+<h2 id="org871a0c8"><span class="section-number-2">5.</span> Background</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 This project originates from the <a href="https://www.lib.uchicago.edu">UChicago Library</a> <a href="https://dldc.lib.uchicago.edu">Digital Library
@@ -439,7 +445,7 @@ project.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Matt Teichman</p>
-<p class="date">Created: 2023-04-13 Thu 16:45</p>
+<p class="date">Created: 2023-04-13 Thu 17:31</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
