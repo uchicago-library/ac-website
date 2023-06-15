@@ -13,7 +13,7 @@ for updates.  Release coming in summer 2023.
 Attachment Converter is an open-source command-line tool for digital
 archivists.  Given an email mailbox in [[https://en.wikipedia.org/wiki/Mbox][MBOX]] format, it will go through
 that mailbox and batch convert all the attachments it can into
-preservation formats, putting a converted copy of each attachment back
+npreservation formats, putting a converted copy of each attachment back
 into the email from which it originated.  The user can then re-open
 the new mailbox in a mail user agent, such as [[https://en.wikipedia.org/wiki/Apple_Mail][Apple Mail]], and browse
 through the mailbox the normal way.
@@ -21,15 +21,6 @@ through the mailbox the normal way.
 * Running
 
 (These instructions assume you have Attachment Converter [[install][installed]].)
-
-To tell Attachment Converter where your config file is, run:
-
-#+begin_example
-  $ attc --config /path/to/your/config/file
-#+end_example
-
-For information on how to generate a config file, please see [[config-generate][the
-relevant section of our build instructions]].
 
 With the config file set up, Attachment Converter can be run:
 
@@ -62,10 +53,14 @@ Once this software is ready for official release, we will be providing
 multiple installation options across as many hardware and OS platforms
 as we can.  Currently, however, the only way to install the project is
 to build it from source, which you probably only realistically want to
-attempt if you're either a developer or a system administrator.  For
-ordinary users, we intend to make Attachment Converter available to
-install via one of the standard package managers and also directly as
-a binary upon its first release.  Please check back later this year
+attempt if you're either a developer or a system administrator.  These
+instructions are currently undergoing heavy revision, so if you try
+them out and experience any difficulties, please don't hesitate to
+[[contact][contact us]].  User feedback at this stage is incredibly valuable.
+
+For ordinary users, we intend to make Attachment Converter available
+to install via one of the standard package managers and also directly
+as a binary upon its first release.  Please check back later this year
 for updates!
 
 As we work toward our first release, here are instructions for
@@ -89,9 +84,23 @@ build it, you need to install the =opam= package manager, which we
 recommend doing via your operating system's package manager.  For
 example:
 
-| Arch Linux         | macOS                 | WSL Ubuntu                             |
-|--------------------+-----------------------+----------------------------------------|
-| =$ pacman -S opam= | =$ brew install opam= | =$ apt-get update && apt install opam= |
+Arch Linux:
+
+#+begin_example
+  $ pacman -S opam
+#+end_example
+
+macOS:
+
+#+begin_example
+  $ brew install opam
+#+end_example
+
+WSL Ubuntu:
+
+#+begin_example
+  $ apt install opam
+#+end_example
 
 Then, regardless of how you install =opam=, you need to initialize it
 in order to be able to use it.
@@ -113,11 +122,23 @@ installation instructions]].
 Attachment Converter relies on the Mercurial version control system to
 install some of its third-party library dependencies.  For example:
 
-| Arch Linux              | macOS                      | WSL Ubuntu                                  |
-|-------------------------+----------------------------+---------------------------------------------|
-| =$ pacman -S mercurial= | =$ brew install mercurial= | =$ apt-get update && apt install mercurial= |
-|                         |                            |                                             |
+Arch Linux:
 
+#+begin_example
+  $ pacman -S mercurial
+#+end_example
+
+macOS:
+
+#+begin_example
+  $ brew install mercurial
+#+end_example
+
+WSL Ubuntu:
+
+#+begin_example
+  $ apt install mercurial
+#+end_example
 
 *** Install =opam= dependencies
 
@@ -181,23 +202,20 @@ Download =pdf2archive=:
   $ export PATH=$PATH:/path/to/your/source/code/pdf2archive
 #+end_example
 
-*** Generate Config File <<config-generate>>
+*** Copy shell scripts to standard location
 
-Attachment Converter comes with a shell script in the root of the
-project for generating its main config file.
-
-To generate the config file:
+In our current pre-alpha stage, the shell scripts that Attachment
+Converter uses to invoke external conversion utilities are expected to
+be located at a specific filepath.  This is expected to change soon as
+we flesh out our installation story.  For this next step, please copy
+them to that location:
 
 #+begin_example
   $ cd /path/to/your/source/code/attachment-converter
-  $ ./make-config.sh > /path/to/your/config/files
+  $ mkdir -p ~/.config/attachment-converter/scripts
+  $ cp conversion-scripts/*.sh ~/.config/attachment-converter/scripts
 #+end_example
 
-Note that in our current pre-alpha stage, Attachment Converter expects
-you to leave the initial GitHub repository where you cloned it,
-because it needs to be able to invoke shell scripts that are in the
-project directory.  That will change as we flesh our installation
-story out.
 
 *** Time to Build
 
@@ -216,7 +234,7 @@ wherever you keep your binaries:
   $ mv _build/default/main.exe /path/to/your/binaries/attc
 #+end_example
 
-* Background
+* Background <<contact>>
 
 This project originates from the [[https://www.lib.uchicago.edu][UChicago Library]] [[https://dldc.lib.uchicago.edu][Digital Library
 Development Center]] and was funded by an [[https://emailarchivesgrant.library.illinois.edu][Email Archives: Building
@@ -225,7 +243,11 @@ support provided by the [[https://mellon.org][Andrew W. Mellon Foundation]].  Th
 development team is:
 
 + [[https://nmmull.github.io/][Nathan Mull]]
-+ [[https://elucidations.vercel.app/][Matt Teichman]]
+  + =first letter of first name= + =last name= + =@uchicago.edu=
++ [[https://www.lib.uchicago.edu/about/directory/staff/matt-teichman/][Matt Teichman]]
+  + =last name= + =@uchicago.edu=
++ [[https://theworldofobi.github.io/][Obi Obetta]]
+  + =last name= + steph + =@uchicago.edu=
 
 Matt has been project manager for the initial development phase and is
 getting ready to transition into the lead developer role.  Previous
