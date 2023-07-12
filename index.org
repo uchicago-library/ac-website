@@ -30,7 +30,10 @@ With the config file set up, Attachment Converter can be run:
   $ attc < example.mbox > example-converted.mbox
 #+end_example
 
-Note that the input mailbox must be in [[https://en.wikipedia.org/wiki/Mbox][MBOX]] format.
+Note that the input mailbox must be in [[https://en.wikipedia.org/wiki/Mbox][MBOX]] format.  If you have an
+Outlook =.pst= file and want to convert it to =.mbox= in order to be
+able to run Attachment Converter on it, we have found [[https://www.five-ten-sg.com/libpst/][Libpst]] to be a
+useful utility for doing that conversion.
 
 * GitHub
 
@@ -76,7 +79,7 @@ You can get the latest source straight from our [[https://github.com/uchicago-li
   $ cd /path/to/your/source/code
   $ git clone https://github.com/uchicago-library/attachment-converter.git
 #+end_example
-
+ 
 *** Install =opam=
 
 Attachment Converter is written in [[https://ocaml.org/][OCaml]], which means that in order to
@@ -175,17 +178,17 @@ For example:
 
 Arch Linux:
 #+begin_example
-  $ pacman -S libreoffice pdftotext pandoc vips ghostscript verapdf
+  $ pacman -S libreoffice pandoc libvips ghostscript
 #+end_example
 
 macOS:
 #+begin_example
-  $ brew install libreoffice pdftotext pandoc vips ghostscript verapdf
+  $ brew install libreoffice pandoc vips ghostscript verapdf
 #+end_example
 
 WSL Ubuntu:
 #+begin_example
-  apt install libreoffice pdftotext pandoc vips ghostscript verapdf
+  $ apt install libreoffice pandoc vips ghostscript verapdf
 #+end_example
 
 Finally, Attachment Converter has one OS-level dependency that is not
