@@ -1,0 +1,104 @@
+# -*- mode: org; coding: utf-8; -*-
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+#+OPTIONS: html-style:nil
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="styles.css" />
+#+HTML_HEAD: <link rel="preconnect" href="https://fonts.googleapis.com">
+#+HTML_HEAD: <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+#+HTML_HEAD: <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+#+HTML_HEAD: <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+#+ATTR_HTML: :class attc-logo
+[[./index.org][file:images/attc_logo.svg]]
+
+#+ATTR_HTML: :class tab-navs
+[[./guide.org][Guide]] [[./docs.org][Docs]] [[./api.org][API]]
+
+# #+HTML_DIVS: :div
+#  #+ATTR_HTML: :class logo-nav
+#   + [[./index.org][file:images/attc_web_logo.png]]
+#  #+ATTR_HTML: :class tab-nav
+#   + [[./guide.org][Guide]]
+#  #+ATTR_HTML: :class tab-nav
+#   + [[./docs.org][Docs]]
+#  #+ATTR_HTML: :class tab-nav
+#   + [[./api.org][API]]
+# #+HTML_DIVS: :/div
+
+#+Author: Matt Teichman
+#+Title: Attachment Converter
+
+*** an open-source tool for batch-converting email attachments to preservation formats
+
+* Install
+
+** WSL Debian
+
+#+begin_example
+  $ sudo apt install attc
+#+end_example
+
+** MacOS
+
+#+begin_example
+  $ brew install attc
+#+end_example
+
+** Arch Linux
+
+#+begin_example
+  $ sudo pacman -S attc
+#+end_example
+
+* Quick Start Commands
+
+Get started running Attachment Converter using these commands:
+
+#+begin_example bash
+  # To convert attachments of a single email
+  $ attc --single-email < example-email.eml > example-email-converted.eml
+
+  # To run a report of a mailbox
+  $ attc --report < example.mbox
+
+  # To convert attachments of a mailbox
+  $ attc < example.mbox > example-converted.mbox
+#+end_example
+
+Note that the input mailbox must be in MBOX format.  If you have an
+Outlook =.pst= file and want to convert it to =.mbox= in order to be
+able to run Attachment Converter on it, we have found [[https://www.flawlessrhetoric.com/Using-libpst-to-convert-PST-to-MBOX,-and-understanding-Thunderbird's-folder-structure][Libpst]] to be a
+useful utility for doing that conversion.
+
+* About
+
+This project originates from the UChicago Library Digital Library
+Development Center and was funded by an Email Archives: Building
+Capacity and Community grant, led by the University of Illinois
+with support provided by the Andrew W. Mellon Foundation. The
+current development team is:
+
++ [[https://nmmull.github.io/][Nathan Mull]]
+  - =first letter of first name= + =last name= + =@uchicago.edu=
+
++ [[https://www.lib.uchicago.edu/about/directory/staff/matt-teichman/][Matt Teichman]]
+  - =last name= + =@uchicago.edu=
+
++ [[https://theworldofobi.github.io/][Obi Obetta]]
+  - =last name= + steph + =@uchicago.edu=
+
+Matt has been project manager for the initial development phase and
+is getting ready to transition into the lead developer role. Previous
+(and possibly future?) members of our illustrious dev team include:
+
++ [[https://github.com/OwenPriceSkelly][Owen Price Skelly]]
++ [[https://github.com/cormacd9818][Cormac Duhamel]]
+
+We are also grateful to [[https://www2.lib.uchicago.edu/keith/][Keith Waclena]] for allowing us to tap into his
+endless wisdom regarding the email specification, UNIX systems
+programming, and the OCaml language throughout our work on this project.
+
+* See More
+
+*** [[./guide.org][See User Guide]]
+*** [[./docs.org][See Documentation]]
+*** [[./api.org][See API Documentation]]
