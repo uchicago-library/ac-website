@@ -1,6 +1,6 @@
 # -*- mode: org; coding: utf-8; -*-
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
-
+# #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style1.css" />
 
 #+Author: Matt Teichman
 #+Title: Attachment Converter
@@ -99,7 +99,7 @@ macOS:
   $ brew install opam
 #+end_example
 
-WSL Ubuntu:
+WSL Debian:
 
 #+begin_example
   $ apt install opam
@@ -137,7 +137,7 @@ macOS:
   $ brew install mercurial
 #+end_example
 
-WSL Ubuntu:
+WSL Debian:
 
 #+begin_example
   $ apt install mercurial
@@ -186,7 +186,7 @@ macOS:
   $ brew install libreoffice pandoc vips ghostscript verapdf
 #+end_example
 
-WSL Ubuntu:
+WSL Debian:
 #+begin_example
   $ apt install libreoffice pandoc vips ghostscript verapdf
 #+end_example
