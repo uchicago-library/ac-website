@@ -1,53 +1,42 @@
 # -*- mode: org; coding: utf-8; -*-
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 #+OPTIONS: html-style:nil
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="styles.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css" />
 #+HTML_HEAD: <link rel="preconnect" href="https://fonts.googleapis.com">
 #+HTML_HEAD: <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 #+HTML_HEAD: <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+#+HTML_HEAD: <script src="https://kit.fontawesome.com/c69874a979.js" crossorigin="anonymous"></script>
 #+HTML_HEAD: <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
 #+ATTR_HTML: :class attc-logo
 [[./index.org][file:images/attc_logo.svg]]
 
 #+ATTR_HTML: :class tab-navs
-[[./guide.org][Guide]] [[./docs.org][Docs]] [[./api.org][API]]
+[[./guide/][Guide]] [[./docs/][Docs]]
+jhkj
 
-# #+HTML_DIVS: :div
-#  #+ATTR_HTML: :class logo-nav
-#   + [[./index.org][file:images/attc_web_logo.png]]
-#  #+ATTR_HTML: :class tab-nav
-#   + [[./guide.org][Guide]]
-#  #+ATTR_HTML: :class tab-nav
-#   + [[./docs.org][Docs]]
-#  #+ATTR_HTML: :class tab-nav
-#   + [[./api.org][API]]
-# #+HTML_DIVS: :/div
+[[./api/index.html][API]]
+
+ghhj
+[[https://github.com/uchicago-library/attachment-converter]]file:images/github.svg]]
 
 #+Author: Matt Teichman
 #+Title: Attachment Converter
 
 *** an open-source tool for batch-converting email attachments to preservation formats
 
-* Install
+Attachment Converter is an open-source command-line
+tool for digital archivists. Given an email mailbox
+in [[https://en.wikipedia.org/wiki/Mbox][MBOX]] format, it will go through that mailbox and
+batch convert all the attachments it can into
+preservation formats, putting a converted copy of
+each attachment back into the email from which it
+originated. The user can then re-open the new
+mailbox in a mail user agent, such as [[https://en.wikipedia.org/wiki/Apple_Mail][Apple Mail]],
+and browse through the mailbox the normal way.
 
-** WSL Debian
-
-#+begin_example
-  $ sudo apt install attc
-#+end_example
-
-** MacOS
-
-#+begin_example
-  $ brew install attc
-#+end_example
-
-** Arch Linux
-
-#+begin_example
-  $ sudo pacman -S attc
-#+end_example
+#+ATTR_HTML: :id install-button
+Install
 
 * Quick Start Commands
 
@@ -86,6 +75,9 @@ current development team is:
 + [[https://theworldofobi.github.io/][Obi Obetta]]
   - =last name= + steph + =@uchicago.edu=
 
++ [[https://www.linkedin.com/in/nk45/][Nishchay Karle]]
+  - =first name= + =last name= + =@uchicago.edu=
+        
 Matt has been project manager for the initial development phase and
 is getting ready to transition into the lead developer role. Previous
 (and possibly future?) members of our illustrious dev team include:
@@ -96,9 +88,3 @@ is getting ready to transition into the lead developer role. Previous
 We are also grateful to [[https://www2.lib.uchicago.edu/keith/][Keith Waclena]] for allowing us to tap into his
 endless wisdom regarding the email specification, UNIX systems
 programming, and the OCaml language throughout our work on this project.
-
-* See More
-
-*** [[./guide.org][See User Guide]]
-*** [[./docs.org][See Documentation]]
-*** [[./api.org][See API Documentation]]

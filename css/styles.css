@@ -70,22 +70,21 @@ div.figure, .figure p {
 }
 
 .attc-logo img {
-    background-color: #851010;
     left: 0; top: 0;
-    max-height: 5.3%;
     position: fixed;
     z-index: 10;
 }
 
 @media screen and (max-width: 768px) {
-    .attc-logo img {
-        width: auto;
+    .attc-logo img, img.org-svg {
+        width: auto !important;
     }
 }
 
 p.tab-navs {
     background-color: #851010;
-    line-height: 2.5;
+    height: 50px;
+    padding: 12.5px 12.5px 0 0;
     position: fixed;
     text-align: right;
     top: 0; left: 0;
@@ -99,24 +98,37 @@ p.tab-navs {
     text-decoration: none;
 }
 
-/* SEE MORE BUTTONS */
+#back-to-top {
+    padding: 1%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
 
-h4 a, h4 a:visited {
+/* BUTTONS */
+
+a#install, a#install:visited {
     background-color: #851010;
     border-color: #851010;
     border-radius: 25px;
     color: #F9F8F8;
     font-family: "Inter", sans-serif;
+    margin: auto;
     padding: 10px;
     text-decoration: none;
     transition-duration: 0.4s;
+    font-size: 1.5em;
 }
 
-h4 a:hover {
-    background-color: #F9F8F8;
+p#install {
+    text-align: center;
+}
+
+a#install:hover {
+    background-color: #282525;
     border-color: #851010;
     border-width: thick;
-    color: #851010;
+    color: #F9F8F8;
     font-weight: bold;
     transition-duration: 0.4s;
 }

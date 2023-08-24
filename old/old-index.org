@@ -1,0 +1,266 @@
+# -*- mode: org; coding: utf-8; -*-
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+# #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style1.css" />
+
+#+Author: Matt Teichman
+#+Title: Attachment Converter
+
+This project is currently in pre-alpha stage, but keep checking back
+for updates.  Release coming in summer 2023.
+
+* Introduction
+
+Attachment Converter is an open-source command-line tool for digital
+archivists.  Given an email mailbox in [[https://en.wikipedia.org/wiki/Mbox][MBOX]] format, it will go through
+that mailbox and batch convert all the attachments it can into
+npreservation formats, putting a converted copy of each attachment back
+into the email from which it originated.  The user can then re-open
+the new mailbox in a mail user agent, such as [[https://en.wikipedia.org/wiki/Apple_Mail][Apple Mail]], and browse
+through the mailbox the normal way.
+
+* Running
+
+(These instructions assume you have Attachment Converter [[install][installed]].)
+
+With the config file set up, Attachment Converter can be run:
+
+#+begin_example
+  $ attc --single-email < example-email.eml > example-email-converted.eml
+  $ attc --report < example.mbox
+  $ attc < example.mbox > example-converted.mbox
+#+end_example
+
+Note that the input mailbox must be in [[https://en.wikipedia.org/wiki/Mbox][MBOX]] format.  If you have an
+Outlook =.pst= file and want to convert it to =.mbox= in order to be
+able to run Attachment Converter on it, we have found [[https://www.five-ten-sg.com/libpst/][Libpst]] to be a
+useful utility for doing that conversion.
+
+* GitHub
+
+Our GitHub page can be found here:
+
+https://github.com/uchicago-library/attachment-converter
+
+We are currently in the pre-alpha phase, gearing up to our first round
+of user testing.  Once the project is released, we will provide
+multiple out-of-the-box installation options.  However, as of April
+2023, the only way to install Attachment Converter is to build it from
+source.  [[install][See below]] for installation instructions.
+
+We expect to be updating this website frequently as we get closer to
+our release date, so please feel free to keep checking back.
+
+* Installation <<install>>
+
+Once this software is ready for official release, we will be providing
+multiple installation options across as many hardware and OS platforms
+as we can.  Currently, however, the only way to install the project is
+to build it from source, which you probably only realistically want to
+attempt if you're either a developer or a system administrator.  These
+instructions are currently undergoing heavy revision, so if you try
+them out and experience any difficulties, please don't hesitate to
+[[contact][contact us]].  User feedback at this stage is incredibly valuable.
+
+For ordinary users, we intend to make Attachment Converter available
+to install via one of the standard package managers and also directly
+as a binary upon its first release.  Please check back later this year
+for updates!
+
+As we work toward our first release, here are instructions for
+building Attachment Converter from source and then installing it.
+
+** Build
+
+*** Download the source
+
+You can get the latest source straight from our [[https://github.com/uchicago-library/attachment-converter][GitHub repository]]:
+
+#+begin_example
+  $ cd /path/to/your/source/code
+  $ git clone https://github.com/uchicago-library/attachment-converter.git
+#+end_example
+ 
+*** Install =opam=
+
+Attachment Converter is written in [[https://ocaml.org/][OCaml]], which means that in order to
+build it, you need to install the =opam= package manager, which we
+recommend doing via your operating system's package manager.  For
+example:
+
+Arch Linux:
+
+#+begin_example
+  $ pacman -S opam
+#+end_example
+
+macOS:
+
+#+begin_example
+  $ brew install opam
+#+end_example
+
+WSL Debian:
+
+#+begin_example
+  $ apt install opam
+#+end_example
+
+Then, regardless of how you install =opam=, you need to initialize it
+in order to be able to use it.
+
+#+begin_example
+  $ opam init
+  $ eval $(opam env)
+#+end_example
+
+=opam= should then print some information to the console telling you
+about the steps it's taking to initialize.
+
+That should be enough to get you going, but if you'd like more
+detailed information on how to install =opam=, please see [[http://opam.ocaml.org/doc/Install.html#Using-your-distribution-39-s-package-system][the official
+installation instructions]].
+
+*** Install Mercurial
+
+Attachment Converter relies on the Mercurial version control system to
+install some of its third-party library dependencies.  For example:
+
+Arch Linux:
+
+#+begin_example
+  $ pacman -S mercurial
+#+end_example
+
+macOS:
+
+#+begin_example
+  $ brew install mercurial
+#+end_example
+
+WSL Debian:
+
+#+begin_example
+  $ apt install mercurial
+#+end_example
+
+*** Install =opam= dependencies
+
+To install all third-party library dependencies for Attachment
+Converter to your =~/.opam= directory (which is where =opam= put the
+OCaml compiler and other packages it's going to use when you ran =opam
+init=), please run the following =make= rule from the root directory
+of the GitHub project you cloned:
+
+#+begin_example
+  $ cd /path/to/your/source/code/attachment-converter
+  $ make deps
+#+end_example
+
+This will make the Digital Library Development Center's very own
+=opam= repository available to you, then install all of Attachment
+Converter's third-party library dependencies.  =make deps= should
+suffice for most purposes, but if you'd like to pursue the slightly
+fancier option of creating a sandboxed =opam= switch, you can instead
+run:
+
+#+begin_example
+  $ cd /path/to/your/source/code/attachment-converter
+  $ make sandbox
+#+end_example
+
+If you don't know what a sandboxed =opam= switch is, we suggest not
+worrying about it and going with the =make deps= rule.
+
+*** Install OS-level dependencies
+
+Next, you must install Attachment Converter's OS-level dependencies.
+For example:
+
+Arch Linux:
+#+begin_example
+  $ pacman -S libreoffice pandoc libvips ghostscript
+#+end_example
+
+macOS:
+#+begin_example
+  $ brew install libreoffice pandoc vips ghostscript verapdf
+#+end_example
+
+WSL Debian:
+#+begin_example
+  $ apt install libreoffice pandoc vips ghostscript verapdf
+#+end_example
+
+Finally, Attachment Converter has one OS-level dependency that is not
+available through the standard repositories, called [[https://github.com/matteosecli/pdf2archive][=pdf2archive=]].
+This is a utility for converting PDF to PDF-A-1b.
+
+Download =pdf2archive=:
+
+#+begin_example
+  $ cd /path/to/your/source/code
+  $ git clone git@github.com:matteosecli/pdf2archive.git
+  $ cd pdf2archive
+  $ chmod +x ./pdf2archive
+  $ export PATH=$PATH:/path/to/your/source/code/pdf2archive
+#+end_example
+
+*** Copy shell scripts to standard location
+
+In our current pre-alpha stage, the shell scripts that Attachment
+Converter uses to invoke external conversion utilities are expected to
+be located at a specific filepath.  This is expected to change soon as
+we flesh out our installation story.  For this next step, please copy
+them to that location:
+
+#+begin_example
+  $ cd /path/to/your/source/code/attachment-converter
+  $ mkdir -p ~/.config/attachment-converter/scripts
+  $ cp conversion-scripts/*.sh ~/.config/attachment-converter/scripts
+#+end_example
+
+
+*** Time to Build
+
+You should now be ready to build Attachment Converter.  To build:
+
+#+begin_example
+  $ cd /path/to/your/source/code/attachment-converter
+  $ make
+#+end_example
+
+You can then install Attachment Converter by copying the binary to
+wherever you keep your binaries:
+
+#+begin_example
+  $ cd /path/to/your/source/code/attachment-converter
+  $ mv _build/default/main.exe /path/to/your/binaries/attc
+#+end_example
+
+* Background <<contact>>
+
+This project originates from the [[https://www.lib.uchicago.edu][UChicago Library]] [[https://dldc.lib.uchicago.edu][Digital Library
+Development Center]] and was funded by an [[https://emailarchivesgrant.library.illinois.edu][Email Archives: Building
+Capacity and Community]] grant, led by the University of Illinois with
+support provided by the [[https://mellon.org][Andrew W. Mellon Foundation]].  The current
+development team is:
+
++ [[https://nmmull.github.io/][Nathan Mull]]
+  + =first letter of first name= + =last name= + =@uchicago.edu=
++ [[https://www.lib.uchicago.edu/about/directory/staff/matt-teichman/][Matt Teichman]]
+  + =last name= + =@uchicago.edu=
++ [[https://theworldofobi.github.io/][Obi Obetta]]
+  + =last name= + steph + =@uchicago.edu=
+
+Matt has been project manager for the initial development phase and is
+getting ready to transition into the lead developer role.  Previous
+(and possibly future?) members of our illustrious dev team include:
+
++ [[https://github.com/OwenPriceSkelly][Owen Price Skelly]]
++ [[https://github.com/cormacd9818][Cormac Duhamel]]
+
+We are also grateful to [[https://www2.lib.uchicago.edu/keith/][Keith Waclena]] for allowing us to tap into his
+endless wisdom regarding the email specification, UNIX systems
+programming, and the OCaml language throughout our work on this
+project.
+

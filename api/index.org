@@ -1,0 +1,12 @@
+# -*- mode: org; coding: utf-8
+#+OPTIONS: html-style:nil
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/coming_soon.css" />
+#+HTML_HEAD: <link rel="preconnect" href="https://fonts.googleapis.com">
+#+HTML_HEAD: <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+#+HTML_HEAD: <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+#+HTML_HEAD: <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+* Coming soon...
+
+#+ATTR_HTML: :class logo
+file:../images/attc_logo.svg

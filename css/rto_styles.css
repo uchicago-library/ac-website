@@ -1,0 +1,98 @@
+/* Color Palette: 
+1. off-white: #F9F8F8
+2. off-black: #282525
+3. dark-red: #851010
+4. light-gray: #E4E1E1
+*/
+
+/* General Text Formatting */
+
+#content {
+    margin: initial;
+}
+
+h1, h4, li a {
+    text-align: left;
+}
+
+/* NAVIGATION & TABLE OF CONTENTS */
+
+#table-of-contents h2 {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    h1.title {
+        padding-top: 0.5em;
+    }
+
+    #toggle-sidebar h2 {
+        background-color: #851010;
+        color: #F9F8F8;
+        opacity: 1;
+    }
+
+    #table-of-contents .close-sidebar {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #table-of-contents .close-sidebar {
+        background-color: #851010;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        z-index: 400;
+    }
+
+    #table-of-contents .close-sidebar:hover {
+        background-color: #851010;
+    }
+}
+
+p.tab-navs {
+    background-color: #851010;
+    height: 50px;
+    padding: 12.5px 12.5px 0 0;
+    position: fixed;
+    text-align: right;
+    top: 0; left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.tab-navs a {
+    color: #F9F8F8 !important;
+    font-size: 125%;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+#table-of-contents {
+    display: initial;
+    background-color: #282525;
+    padding-top: 4em;
+}
+
+#table-of-contents h2 {
+    background-color: #851010;
+    color: #F9F8F8;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+#table-of-contents a, #table-of-contents li a {
+    color: #E4E1E1;
+    text-decoration: none;
+}
+
+#table-of-contents a:hover {
+    color: #F9F8F8;
+}
+
+ul.nav>li.active>a {
+    background-color: #E4E1E1;
+    color: #851010 !important;
+}

@@ -1,0 +1,33 @@
+/* Color Palette: 
+1. off-white: #F9F8F8
+2. off-black: #282525
+3. dark-red: #851010
+4. light-gray: #E4E1E1
+*/
+
+/* General Text Formatting */
+
+body {
+    background-color: #282525;
+    color: #F9F8F8;
+    font-family: "Poppins", sans-serif;
+    margin: auto;
+    text-align: center;
+}
+
+#content {
+    margin: auto;
+    max-width: 60em;
+}
+
+#toggle-sidebar h2, #table-of-contents, 
+span, #postamble, #preamble {
+    display: none;
+}
+
+/* Logo */
+
+.logo {
+    margin: auto;
+    min-width: 100%;
+}

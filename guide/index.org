@@ -1,0 +1,150 @@
+# -*- mode: org; coding: utf-8; -*-
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/og_rto.css" />
+#+HTML_HEAD: <link rel="preconnect" href="https://fonts.googleapis.com">
+#+HTML_HEAD: <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+#+HTML_HEAD: <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+#+HTML_HEAD: <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+
+#+ATTR_HTML: :class attc-logo
+[[./index.org][file:../images/attc_logo.svg]]
+
+#+ATTR_HTML: :class tab-navs
+[[../guide/][Guide]] [[../docs/][Docs]] [[../api/][API]] [[https://github.com/uchicago-library/attachment-converter][file:../images/github.svg]] [[./index.html#table-of-contents][file:../images/navbar.svg]]
+
+#+Author: Matt Teichman
+#+Title: Guide | Attachment Converter
+
+* Introduction
+
+** About Attachment Converter
+
+Attachment Converter is an open-source command-line
+tool for digital archivists. Given an email mailbox
+in [[https://en.wikipedia.org/wiki/Mbox][MBOX]] format, it will go through that mailbox and
+batch convert all the attachments it can into
+preservation formats, putting a converted copy of
+each attachment back into the email from which it
+originated. The user can then re-open the new
+mailbox in a mail user agent, such as [[https://en.wikipedia.org/wiki/Apple_Mail][Apple Mail]],
+and browse through the mailbox the normal way.
+
+** MBOX Files
+
+For batch conversion and report creation, Attachment
+Converter assumes the input to be an MBOX file (=.mbox=).
+MBOX files are human-readable and universally established
+as a supported inbox file format. If your inbox file is
+already in the =.mbox= format, then skip to the *"Basic*
+*Commands"* section.
+
+If you have an Outlook =.pst= file, we have found [[https://www.five-ten-sg.com/libpst/][Libpst]]
+to be a useful utility for performing that conversion. Once
+installed, you can run:
+
+#+begin_example
+  $ readpst example.pst
+#+end_example
+
+For other file formats, please be sure to find a utility
+capable of converting your current file to =.mbox=.
+
+* Basic Commands
+
+Now that you have installed Attachment Converter,
+here is how to use it in the command line. If you
+have not started the installation process, click
+[[../][here]].
+
+** Batch Inbox Conversion
+
+By default, =attc= will expect an inbox file =.mbox=
+and will batch convert any attachments within an email
+in the inbox. For ease of use, =cd= into the directory
+containing your inbox file and run:
+
+#+begin_example
+  $ attc < example.mbox > example-converted.mbox
+#+end_example
+
+Running this command creates a new inbox file. Inside
+the converted emails, you will find both the original
+file and the converted file attached to the email.
+
+** Single-Email Conversion
+
+To simply convert the attachments within one email file
+=.eml=, run:
+
+#+begin_example
+  $ attc --single-email < example-email.eml > example-email-converted.eml
+#+end_example
+
+You can also replace =--single-email= with its shorter name =-s=.
+
+** Running Reports on an Inbox
+
+Attachment Converter also supports running a report on
+an inbox. This feature allows you to examine the content
+types of the attachments in an inbox without performing
+any conversions. Reports in Attachment Converter list
+the total number of files that match each [[https://en.wikipedia.org/wiki/Media_type][MIME type]].
+
+To run a report on an inbox file =.mbox=, run:
+
+#+begin_example
+  $ attc --report < example.mbox
+#+end_example
+
+Your report will ressemble the following:
+
+#+begin_example
+  Content Types:
+    application/msword : 19
+    application/octet-stream : 7
+    application/pdf : 219
+    application/rtf : 3
+    application/vnd.openxmlformats-officedocument.presentationml.presentation : 2
+    application/vnd.openxmlformats-officedocument.wordprocessingml.document : 41
+    application/zip : 2
+    image/gif : 67
+    image/jpeg : 271
+    image/jpg : 6
+    image/pjpeg : 6
+    image/png : 498
+    image/tiff : 1
+    message/rfc822 : 11
+    multipart/mixed : 8643
+    multipart/signed : 2
+    text/calendar : 2
+    text/html : 8341
+    text/plain : 302
+#+end_example
+
+You can also replace =--report= with its shorter name =-r=.
+
+* Conversions
+
+Below are the conversions that =attc= supports:
+
+| Source  |  Target            |
+| =.pdf=  | PDF-A 1b (=.pdf=)  |
+| =.pdf=  | plaintext (=.txt=) |
+| =.doc=  | PDF-A 1b (=.pdf=)  |
+| =.doc=  | plaintext (=.txt=) |
+| =.docx= | PDF-A 1b (=.pdf=)  |
+| =.docx= | plaintext (=.txt=) |
+| =.xls=  |    TSV (=.tsv=)    |
+| =.xlsx= |    TSV (=.tsv=)    |
+| =.gif=  |   TIFF (=.tif=)    |
+| =.bmp=  |   TIFF (=.tif=)    |
+| =.jpg=  |   TIFF (=.tif=)    |
+
+Source files represent the inputs and target files
+represent the outputs that =attc= supports. Attachment
+Converter supports configurations to customize the
+conversions that it can perform. Click *here* for the
+instructions to do so.
+
+#+ATTR_HTML: :id back-to-top
+[[./][file:../images/back_to_top.svg]]

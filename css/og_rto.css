@@ -1,0 +1,211 @@
+/* Color Palette: 
+1. off-white: #F9F8F8
+2. off-black: #282525
+3. dark-red: #851010
+4. light-gray: #E4E1E1
+*/
+
+/* General Text Formatting */
+
+body {
+    background-color: #F9F8F8;
+    color: #282525;
+    margin: 0;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+#content {
+    background: #F9F8F8;
+    font-family: 'Inter', sans-serif;
+    max-width: 60em;
+}
+
+h1  {
+    color: #851010;
+    font-family: "Poppins", sans-serif;
+    font-size: 200%;
+    margin-bottom: 0.8em !important;
+    padding-top: 1.75em;
+}
+
+h2, h3 {
+    color: #851010;
+    font-family: "Poppins", sans-serif;
+}
+
+h4 {
+    color: #282525;
+    font-family: "Poppins", sans-serif;
+    font-size: medium;
+    font-weight: bold;
+}
+
+a {
+    color: #851010;
+    text-decoration: underline;
+    transition-delay: 0.2s;
+}
+
+a:visited, a:hover {
+    color: #851010;
+}
+
+a:hover {
+    font-weight: 600;
+    transition-delay: 0.2s;
+}
+
+li a {
+    text-align: left;
+}
+
+/* NAVIGATION & TABLE OF CONTENTS */
+
+#postamble, #preamble, #table-of-contents h2 {
+    display: none;
+}
+
+div.figure, .figure p {
+    margin: 0;
+    padding: 0;
+}
+
+.attc-logo img {
+    left: 0; top: 0;
+    position: fixed;
+    z-index: 1100;
+}
+
+@media screen and (max-width: 768px) {
+    h1.title {
+        padding-top: 0.5em;
+    }
+
+    .attc-logo img, img.org-svg {
+        width: auto !important;
+    }
+
+    #toggle-sidebar h2 {
+        background-color: #851010;
+        color: #F9F8F8;
+        opacity: 1;
+    }
+
+    #table-of-contents .close-sidebar {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #table-of-contents .close-sidebar {
+        background-color: #851010;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        z-index: 400;
+    }
+
+    #table-of-contents .close-sidebar:hover {
+        background-color: #851010;
+    }
+}
+
+p.tab-navs {
+    background-color: #851010;
+    height: 50px;
+    padding: 12.5px 12.5px 0 0;
+    position: fixed;
+    text-align: right;
+    top: 0; left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.tab-navs a {
+    color: #F9F8F8 !important;
+    font-size: 125%;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+#table-of-contents {
+    background-color: #282525;
+    padding-top: 4em;
+}
+
+#table-of-contents h2 {
+    background-color: #851010;
+    color: #F9F8F8;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+#table-of-contents a, #table-of-contents li a {
+    color: #E4E1E1;
+    text-decoration: none;
+}
+
+#table-of-contents a:hover {
+    color: #F9F8F8;
+}
+
+ul.nav>li.active>a {
+    background-color: #E4E1E1;
+    color: #851010 !important;
+}
+
+#back-to-top {
+    padding: 1%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+/* Source Code */
+
+p.verse {
+    margin-left: 3%;
+}
+
+code {
+    background-color: #E4E1E1;
+    border-radius: 5px;
+    color: #851010;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 100%;
+    padding: 0%;
+}
+
+pre.example {
+    background-color: #282525;
+    border-radius: 25px;
+    border: 1px solid #F9F8F8;
+    color: #F9F8F8;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: medium;
+    margin: 1.2em;
+    overflow: auto;
+    padding: 8pt;
+}
+
+pre.src {
+    overflow: auto;
+    position: relative;
+}
+
+pre.src:before {
+    background-color: #f2f2f299;
+    color: #555;
+    display: none;
+    padding: 3px;
+    position: absolute;
+    right: 12px;
+    top: -8px;
+}
+
+pre.src:hover:before {
+    display: inline;
+    margin-top: 14px;
+    }
