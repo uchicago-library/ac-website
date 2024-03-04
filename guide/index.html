@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-08-24 Thu 15:58 -->
+<!-- 2023-09-18 Mon 14:00 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Guide | Attachment Converter</title>
@@ -28,39 +28,39 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orga7a13da">1. Introduction</a>
+<li><a href="#org9d2a05a">1. Introduction</a>
 <ul>
-<li><a href="#org846b7e3">1.1. About Attachment Converter</a></li>
-<li><a href="#orgdcdaac9">1.2. MBOX Files</a></li>
+<li><a href="#org4d5dd65">1.1. About Attachment Converter</a></li>
+<li><a href="#orge96cd0b">1.2. MBOX Files</a></li>
 </ul>
 </li>
-<li><a href="#orga9bbff1">2. Basic Commands</a>
+<li><a href="#orgb0431d1">2. Basic Commands</a>
 <ul>
-<li><a href="#orga0301ec">2.1. Batch Inbox Conversion</a></li>
-<li><a href="#org0d5a64c">2.2. Single-Email Conversion</a></li>
-<li><a href="#org4d54458">2.3. Running Reports on an Inbox</a></li>
+<li><a href="#orgc47cac8">2.1. Batch Inbox Conversion</a></li>
+<li><a href="#orgb84cddf">2.2. Single-Email Conversion</a></li>
+<li><a href="#org47e4e16">2.3. Running Reports on an Inbox</a></li>
 </ul>
 </li>
-<li><a href="#orgf72aeb9">3. Conversions</a></li>
+<li><a href="#org67289ed">3. Conversions</a></li>
 </ul>
 </div>
 </div>
 
-<div id="org732bda6" class="figure">
-<p><a href="./index.html" class="attc-logo"><img src="../images/attc_logo.svg" alt="attc_logo.svg" class="attc-logo" /></a>
+<div id="org793c7b5" class="figure">
+<p><a href="../index.html" class="attc-logo"><img src="../images/attc_logo.svg" alt="attc_logo.svg" class="attc-logo" /></a>
 </p>
 </div>
 
 <p class="tab-navs">
-<a href="../guide/" class="tab-navs">Guide</a> <a href="../docs/">Docs</a> <a href="../api/">API</a> <a href="https://github.com/uchicago-library/attachment-converter"><img src="../images/github.svg" alt="github.svg" class="org-svg" /></a> <a href="./index.html#table-of-contents"><img src="../images/navbar.svg" alt="navbar.svg" class="org-svg" /></a>
+<a href="../guide/" class="tab-navs">Guide</a> <a href="../docs/">Docs</a> <a href="../api/">API</a> <a href="https://github.com/uchicago-library/attachment-converter"><img src="../images/github.svg" alt="github.svg" class="org-svg" /></a> <a href="../index.html#table-of-contents"><img src="../images/navbar.svg" alt="navbar.svg" class="org-svg" /></a>
 </p>
 
-<div id="outline-container-orga7a13da" class="outline-2">
-<h2 id="orga7a13da"><span class="section-number-2">1.</span> Introduction</h2>
+<div id="outline-container-org9d2a05a" class="outline-2">
+<h2 id="org9d2a05a"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org846b7e3" class="outline-3">
-<h3 id="org846b7e3"><span class="section-number-3">1.1.</span> About Attachment Converter</h3>
+<div id="outline-container-org4d5dd65" class="outline-3">
+<h3 id="org4d5dd65"><span class="section-number-3">1.1.</span> About Attachment Converter</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Attachment Converter is an open-source command-line
@@ -76,8 +76,8 @@ and browse through the mailbox the normal way.
 </div>
 </div>
 
-<div id="outline-container-orgdcdaac9" class="outline-3">
-<h3 id="orgdcdaac9"><span class="section-number-3">1.2.</span> MBOX Files</h3>
+<div id="outline-container-orge96cd0b" class="outline-3">
+<h3 id="orge96cd0b"><span class="section-number-3">1.2.</span> MBOX Files</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 For batch conversion and report creation, Attachment
@@ -94,7 +94,7 @@ to be a useful utility for performing that conversion. Once
 installed, you can run:
 </p>
 
-<pre class="example" id="org1c9c623">
+<pre class="example" id="org8b8ff2f">
 $ readpst example.pst
 </pre>
 
@@ -106,8 +106,8 @@ capable of converting your current file to <code>.mbox</code>.
 </div>
 </div>
 
-<div id="outline-container-orga9bbff1" class="outline-2">
-<h2 id="orga9bbff1"><span class="section-number-2">2.</span> Basic Commands</h2>
+<div id="outline-container-orgb0431d1" class="outline-2">
+<h2 id="orgb0431d1"><span class="section-number-2">2.</span> Basic Commands</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Now that you have installed Attachment Converter,
@@ -117,8 +117,8 @@ have not started the installation process, click
 </p>
 </div>
 
-<div id="outline-container-orga0301ec" class="outline-3">
-<h3 id="orga0301ec"><span class="section-number-3">2.1.</span> Batch Inbox Conversion</h3>
+<div id="outline-container-orgc47cac8" class="outline-3">
+<h3 id="orgc47cac8"><span class="section-number-3">2.1.</span> Batch Inbox Conversion</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 By default, <code>attc</code> will expect an inbox file <code>.mbox</code>
@@ -127,7 +127,7 @@ in the inbox. For ease of use, <code>cd</code> into the directory
 containing your inbox file and run:
 </p>
 
-<pre class="example" id="org0db3545">
+<pre class="example" id="orgd533541">
 $ attc &lt; example.mbox &gt; example-converted.mbox
 </pre>
 
@@ -139,15 +139,15 @@ file and the converted file attached to the email.
 </div>
 </div>
 
-<div id="outline-container-org0d5a64c" class="outline-3">
-<h3 id="org0d5a64c"><span class="section-number-3">2.2.</span> Single-Email Conversion</h3>
+<div id="outline-container-orgb84cddf" class="outline-3">
+<h3 id="orgb84cddf"><span class="section-number-3">2.2.</span> Single-Email Conversion</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 To simply convert the attachments within one email file
 <code>.eml</code>, run:
 </p>
 
-<pre class="example" id="org0ad04b0">
+<pre class="example" id="org458974f">
 $ attc --single-email &lt; example-email.eml &gt; example-email-converted.eml
 </pre>
 
@@ -157,8 +157,8 @@ You can also replace <code>--single-email</code> with its shorter name <code>-s<
 </div>
 </div>
 
-<div id="outline-container-org4d54458" class="outline-3">
-<h3 id="org4d54458"><span class="section-number-3">2.3.</span> Running Reports on an Inbox</h3>
+<div id="outline-container-org47e4e16" class="outline-3">
+<h3 id="org47e4e16"><span class="section-number-3">2.3.</span> Running Reports on an Inbox</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 Attachment Converter also supports running a report on
@@ -172,7 +172,7 @@ the total number of files that match each <a href="https://en.wikipedia.org/wiki
 To run a report on an inbox file <code>.mbox</code>, run:
 </p>
 
-<pre class="example" id="orgc562fe7">
+<pre class="example" id="orga9a0848">
 $ attc --report &lt; example.mbox
 </pre>
 
@@ -180,7 +180,7 @@ $ attc --report &lt; example.mbox
 Your report will ressemble the following:
 </p>
 
-<pre class="example" id="orgeb4bdcd">
+<pre class="example" id="org93ea6a4">
 Content Types:
   application/msword : 19
   application/octet-stream : 7
@@ -210,8 +210,8 @@ You can also replace <code>--report</code> with its shorter name <code>-r</code>
 </div>
 </div>
 
-<div id="outline-container-orgf72aeb9" class="outline-2">
-<h2 id="orgf72aeb9"><span class="section-number-2">3.</span> Conversions</h2>
+<div id="outline-container-org67289ed" class="outline-2">
+<h2 id="org67289ed"><span class="section-number-2">3.</span> Conversions</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Below are the conversions that <code>attc</code> supports:
@@ -297,7 +297,7 @@ instructions to do so.
 </p>
 
 
-<div id="org14b1cbc" class="figure">
+<div id="org652a350" class="figure">
 <p><a href="./" id="back-to-top"><img src="../images/back_to_top.svg" alt="back_to_top.svg" class="org-svg" id="back-to-top" /></a>
 </p>
 </div>
@@ -306,7 +306,7 @@ instructions to do so.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Matt Teichman</p>
-<p class="date">Created: 2023-08-24 Thu 15:58</p>
+<p class="date">Created: 2023-09-18 Mon 14:00</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

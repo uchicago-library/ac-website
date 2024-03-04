@@ -7,7 +7,7 @@
 #+HTML_HEAD: <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 
 #+ATTR_HTML: :class attc-logo
-[[./index.org][file:../images/attc_logo.svg]]
+[[../index.org][file:../images/attc_logo.svg]]
 
 #+ATTR_HTML: :class tab-navs
 [[../guide/][Guide]] [[../docs/][Docs]] [[../api/][API]] [[https://github.com/uchicago-library/attachment-converter][file:../images/github.svg]] [[./index.html#table-of-contents][file:../images/navbar.svg]]
