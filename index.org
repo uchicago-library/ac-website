@@ -66,7 +66,7 @@ current development team is:
 + [[https://www.lib.uchicago.edu/about/directory/staff/matt-teichman/][Matt Teichman]]
   - =last name= + =@uchicago.edu=
 
-+ Emily Schartz
++ [[https://www.lib.uchicago.edu/about/directory/staff/emily-schartz/][Emily Schartz]]
   - =first letter of first name= + j + =last name= + =@uchicago.edu=
         
 Matt is currently managing the project. Previous (and possibly
