@@ -66,18 +66,16 @@ current development team is:
 + [[https://www.lib.uchicago.edu/about/directory/staff/matt-teichman/][Matt Teichman]]
   - =last name= + =@uchicago.edu=
 
-+ [[https://theworldofobi.github.io/][Obi Obetta]]
-  - =last name= + steph + =@uchicago.edu=
-
-+ [[https://www.linkedin.com/in/nk45/][Nishchay Karle]]
-  - =first name= + =last name= + =@uchicago.edu=
++ Emily Schartz
+  - =first letter of first name= + j + =last name= + =@uchicago.edu=
         
-Matt has been project manager for the initial development phase and
-is getting ready to transition into the lead developer role. Previous
-(and possibly future?) members of our illustrious dev team include:
+Matt is currently managing the project. Previous (and possibly
+future?) members of our illustrious dev team include:
 
 + [[https://github.com/OwenPriceSkelly][Owen Price Skelly]]
 + [[https://github.com/cormacd9818][Cormac Duhamel]]
++ [[https://www.linkedin.com/in/nk45/][Nishchay Karle]]
++ [[https://theworldofobi.github.io/][Obi Obetta]]
 
 We are also grateful to [[https://www2.lib.uchicago.edu/keith/][Keith Waclena]] for allowing us to tap into his
 endless wisdom regarding the email specification, UNIX systems
