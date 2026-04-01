@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-03-04 Mon 09:53 -->
+<!-- 2025-03-11 Tue 14:10 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Attachment Converter</title>
@@ -11,9 +11,11 @@
 <meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/search.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/search.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
 <link rel="stylesheet" type="text/css" href="css/styles.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,16 +31,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf78a58d">0.0.1. an open-source tool for batch-converting email attachments to preservation formats</a></li>
+<li><a href="#org9aeb9fa">0.0.1. an open-source tool for batch-converting email attachments to preservation formats</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orga44d31d">1. Quick Start Commands</a></li>
-<li><a href="#org2bd7a57">2. About</a></div>
+<li><a href="#org325f0b4">1. Quick Start Commands</a></li>
+<li><a href="#orgffa36b7">2. About</a></div>
 </div>
 
-<div id="org9911960" class="figure">
+<div id="org455e0c9" class="figure">
 <p><a href="./index.html" class="attc-logo"><img src="images/attc_logo.svg" alt="attc_logo.svg" class="attc-logo" /></a>
 </p>
 </div>
@@ -46,9 +48,8 @@
 <p class="tab-navs">
 <a href="./guide/" class="tab-navs">Guide</a> <a href="./docs/">Docs</a> <a href="./api/index.html">API</a> <a href="https://github.com/uchicago-library/attachment-converter"><img src="images/github.svg" alt="github.svg" class="org-svg" /></a>
 </p>
-
-<div id="outline-container-orgf78a58d" class="outline-4">
-<h4 id="orgf78a58d"><span class="section-number-4">0.0.1.</span> an open-source tool for batch-converting email attachments to preservation formats</h4>
+<div id="outline-container-org9aeb9fa" class="outline-4">
+<h4 id="org9aeb9fa"><span class="section-number-4">0.0.1.</span> an open-source tool for batch-converting email attachments to preservation formats</h4>
 <div class="outline-text-4" id="text-0-0-1">
 <p>
 Attachment Converter is an open-source command-line
@@ -67,15 +68,14 @@ and browse through the mailbox the normal way.
 </p>
 </div>
 </div>
-
-<div id="outline-container-orga44d31d" class="outline-2">
-<h2 id="orga44d31d"><span class="section-number-2">1.</span> Quick Start Commands</h2>
+<div id="outline-container-org325f0b4" class="outline-2">
+<h2 id="org325f0b4"><span class="section-number-2">1.</span> Quick Start Commands</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Get started running Attachment Converter using these commands:
 </p>
 
-<pre class="example" id="orgd87d180">
+<pre class="example" id="orgb63bcf8">
 # To convert attachments of a single email
 $ attc --single-email &lt; example-email.eml &gt; example-email-converted.eml
 
@@ -94,9 +94,8 @@ useful utility for doing that conversion.
 </p>
 </div>
 </div>
-
-<div id="outline-container-org2bd7a57" class="outline-2">
-<h2 id="org2bd7a57"><span class="section-number-2">2.</span> About</h2>
+<div id="outline-container-orgffa36b7" class="outline-2">
+<h2 id="orgffa36b7"><span class="section-number-2">2.</span> About</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 This project originates from the UChicago Library Digital Library
@@ -117,10 +116,7 @@ current development team is:
 <li><code>last name</code> + <code>@uchicago.edu</code></li>
 </ul></li>
 
-<li><a href="https://www.lib.uchicago.edu/about/directory/staff/emily-schartz/">Emily Schartz</a>
-<ul class="org-ul">
-<li><code>first letter of first name</code> + j + <code>last name</code> + <code>@uchicago.edu</code></li>
-</ul></li>
+<li>Charles Njoroge</li>
 </ul>
 
 <p>
@@ -133,6 +129,8 @@ future?) members of our illustrious dev team include:
 <li><a href="https://github.com/cormacd9818">Cormac Duhamel</a></li>
 <li><a href="https://www.linkedin.com/in/nk45/">Nishchay Karle</a></li>
 <li><a href="https://theworldofobi.github.io/">Obi Obetta</a></li>
+<li><a href="https://www.lib.uchicago.edu/about/directory/staff/emily-schartz/">Emily Schartz</a></li>
+<li>Ben Kim</li>
 </ul>
 
 <p>
@@ -142,7 +140,7 @@ programming, and the OCaml language throughout our work on this project.
 </p>
 
 
-<div id="org82170d9" class="figure">
+<div id="org85f0c5f" class="figure">
 <p><img src="images/back_to_top.svg" alt="back_to_top.svg" class="org-svg" id="back-to-top" />
 </p>
 </div>
@@ -151,7 +149,7 @@ programming, and the OCaml language throughout our work on this project.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Matt Teichman</p>
-<p class="date">Created: 2024-03-04 Mon 09:53</p>
+<p class="date">Created: 2025-03-11 Tue 14:10</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

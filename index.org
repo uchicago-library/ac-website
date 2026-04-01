@@ -66,8 +66,7 @@ current development team is:
 + [[https://www.lib.uchicago.edu/about/directory/staff/matt-teichman/][Matt Teichman]]
   - =last name= + =@uchicago.edu=
 
-+ [[https://www.lib.uchicago.edu/about/directory/staff/emily-schartz/][Emily Schartz]]
-  - =first letter of first name= + j + =last name= + =@uchicago.edu=
++ Charles Njoroge
         
 Matt is currently managing the project. Previous (and possibly
 future?) members of our illustrious dev team include:
@@ -76,6 +75,8 @@ future?) members of our illustrious dev team include:
 + [[https://github.com/cormacd9818][Cormac Duhamel]]
 + [[https://www.linkedin.com/in/nk45/][Nishchay Karle]]
 + [[https://theworldofobi.github.io/][Obi Obetta]]
++ [[https://www.lib.uchicago.edu/about/directory/staff/emily-schartz/][Emily Schartz]]
++ Ben Kim
 
 We are also grateful to [[https://www2.lib.uchicago.edu/keith/][Keith Waclena]] for allowing us to tap into his
 endless wisdom regarding the email specification, UNIX systems
