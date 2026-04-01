@@ -1,5 +1,5 @@
 # -*- mode: org; coding: utf-8; -*-
-#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/html-theme-readtheorg.setup
 #+OPTIONS: html-style:nil
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css" />
 #+HTML_HEAD: <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,8 +65,6 @@ current development team is:
 
 + [[https://www.lib.uchicago.edu/about/directory/staff/matt-teichman/][Matt Teichman]]
   - =last name= + =@uchicago.edu=
-
-+ Charles Njoroge
         
 Matt is currently managing the project. Previous (and possibly
 future?) members of our illustrious dev team include:
@@ -77,6 +75,7 @@ future?) members of our illustrious dev team include:
 + [[https://theworldofobi.github.io/][Obi Obetta]]
 + [[https://www.lib.uchicago.edu/about/directory/staff/emily-schartz/][Emily Schartz]]
 + Ben Kim
++ Charles Njoroge
 
 We are also grateful to [[https://www2.lib.uchicago.edu/keith/][Keith Waclena]] for allowing us to tap into his
 endless wisdom regarding the email specification, UNIX systems
