@@ -1,5 +1,5 @@
 # -*- mode: org; coding: utf-8; -*-
-#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/setup/html-theme-readtheorg.setup
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/og_rto.css" />
 #+HTML_HEAD: <link rel="preconnect" href="https://fonts.googleapis.com">
 #+HTML_HEAD: <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +14,100 @@
 
 #+Author: Matt Teichman
 #+Title: Docs | Attachment Converter
+
+* Installation
+** Windows
+There is no native Windows version of =attc=, but we maintain a
+version for Ubuntu 26.04.  To install =attc= via the Ubuntu WSL on
+your Windows machine:
+
+*[ insert instructions for installing WSL here ]*
+
+To install, please open up a fresh WSL terminal and type this command.
+
+#+begin_example
+  sudo add-apt-repository ppa:uchicago-dldc/attc
+#+end_example
+
+It will prompt you for your WSL password.  The window won't display
+your password when you type it.  When you hit enter, if it's working,
+you should see something like this in the console:
+
+#+begin_example
+  URIs: https://ppa.launchpadcontent.net/uchicago-dldc/attc/ubuntu/
+  Suites: resolute
+  Components: main
+  '
+  More info: https://launchpad.net/~uchicago-dldc/+archive/ubuntu/attc
+  Adding repository.
+#+end_example
+
+And then after that, you should see a bunch of messages about things
+downloading.  Next, type this command:
+
+#+begin_example
+  sudo apt update
+#+end_example
+
+That command will check for updates.  Finally, to install =attc=, type
+this command:
+
+#+begin_example
+  sudo apt install attc
+#+end_example
+
+It will print a long message telling you about all the Linux
+dependencies it's going to install, then ask you to confirm by typing
+=Y= and hitting enter.
+
+Congratulations.  =attc= is now installed to your WSL.  Please see our
+
+[[../guide][Guide]] for instructions on how to use =attc=.
+
+** macOS
+
+On macOS, we recommend installing =attc= via Homebrew.  
+
+*[ insert instructions for installing homebrew here ]*
+
+*[ insert *instructions for dealing with XCode's nonsense + a reminder
+to do a *system update if you haven't done one recently ]*
+
+To install,
+please open your Terminal app and type this command:
+
+#+begin_example
+  brew tap uchicago-library/attc
+#+end_example
+
+This will subscribe you to our UChicago Homebrew package for =attc=,
+so that you can automatically get updates.  Homebrew may print some
+messages about how it is auto-updating when you run this command.
+Next, please run:
+
+#+begin_example
+  brew trust --formula uchicago-library/attc/attc
+#+end_example
+
+This tells Homebrew that you trust our repository, and allows it to go
+ahead with the install.  Next, type this command to install =attc= to
+your Mac:
+
+#+begin_example
+  brew install attc
+#+end_example
+
+After you type the command, it will ask you to confirm.  Type =y= to
+confirm.  You should see a lot of installation messages get printed to
+the screen, and then at the end you'll see a message telling you to
+run this command:
+
+#+begin_example
+
+#+end_example
+
+This command installs LibreOffice, which is what Attachment Converter
+uses to convert =.doc= file attachments in email.
 
 * Installation <<install>>
 

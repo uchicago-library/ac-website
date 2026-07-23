@@ -3,18 +3,22 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-08-24 Thu 16:09 -->
+<!-- 2026-07-23 Thu 11:27 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Docs | Attachment Converter</title>
 <meta name="author" content="Matt Teichman" />
 <meta name="generator" content="Org Mode" />
-<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
-<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg/css/code-copy.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg/css/search.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
-<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/vendor/stickytableheaders/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg/js/search.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg/js/code-copy.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/og_rto.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,31 +32,37 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org38fd147">1. Installation </a>
+<li><a href="#org7c1487b">1. Installation</a>
 <ul>
-<li><a href="#orge747a08">1.1. Automated Installation</a></li>
-<li><a href="#orgb455073">1.2. Manual Building</a>
+<li><a href="#org011dc1c">1.1. Windows</a></li>
+<li><a href="#org9b1ce66">1.2. macOS</a></li>
+</ul>
+</li>
+<li><a href="#org81d5dbf">2. Installation </a>
 <ul>
-<li><a href="#org053b5a1">1.2.1. Install <code>opam</code></a></li>
-<li><a href="#org1df3ea6">1.2.2. Install Mercurial</a></li>
-<li><a href="#org5a1fae4">1.2.3. Install <code>opam</code> dependencies</a></li>
-<li><a href="#org2dd549d">1.2.4. Install OS-level dependencies</a></li>
-<li><a href="#org121cade">1.2.5. Copy shell scripts to standard location</a></li>
-<li><a href="#org83c45b9">1.2.6. Time to Build</a></li>
+<li><a href="#org3c082e8">2.1. Automated Installation</a></li>
+<li><a href="#org0f4b970">2.2. Manual Building</a>
+<ul>
+<li><a href="#org7c287c3">2.2.1. Install <code>opam</code></a></li>
+<li><a href="#org7ca56e2">2.2.2. Install Mercurial</a></li>
+<li><a href="#org3d688f0">2.2.3. Install <code>opam</code> dependencies</a></li>
+<li><a href="#orge03e8cf">2.2.4. Install OS-level dependencies</a></li>
+<li><a href="#org80ebed0">2.2.5. Copy shell scripts to standard location</a></li>
+<li><a href="#org0fbe402">2.2.6. Time to Build</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orge94df2d">2. Advanced Concepts</a>
+<li><a href="#orgeb8b5f8">3. Advanced Concepts</a>
 <ul>
-<li><a href="#org4202297">2.1. Conversion Customization</a></li>
+<li><a href="#org8fa0eba">3.1. Conversion Customization</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="orgb6bf81b" class="figure">
+<div id="org05ca910" class="figure">
 <p><a href="../index.html" class="attc-logo"><img src="../images/attc_logo.svg" alt="attc_logo.svg" class="attc-logo" /></a>
 </p>
 </div>
@@ -60,10 +70,135 @@
 <p class="tab-navs">
 <a href="../guide/" class="tab-navs">Guide</a> <a href="../docs/">Docs</a> <a href="../api/">API</a> <a href="https://github.com/uchicago-library/attachment-converter"><img src="../images/github.svg" alt="github.svg" class="org-svg" /></a> <a href="./index.html#table-of-contents"><img src="../images/navbar.svg" alt="navbar.svg" class="org-svg" /></a>
 </p>
-
-<div id="outline-container-org38fd147" class="outline-2">
-<h2 id="org38fd147"><span class="section-number-2">1.</span> Installation <a id="orgb621242"></a></h2>
+<div id="outline-container-org7c1487b" class="outline-2">
+<h2 id="org7c1487b"><span class="section-number-2">1.</span> Installation</h2>
 <div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org011dc1c" class="outline-3">
+<h3 id="org011dc1c"><span class="section-number-3">1.1.</span> Windows</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+There is no native Windows version of <code>attc</code>, but we maintain a
+version for Ubuntu 26.04.  To install <code>attc</code> via the Ubuntu WSL on
+your Windows machine:
+</p>
+
+<p>
+<b>[ insert instructions for installing WSL here ]</b>
+</p>
+
+<p>
+To install, please open up a fresh WSL terminal and type this command.
+</p>
+
+<pre class="example" id="org4726325">
+sudo add-apt-repository ppa:uchicago-dldc/attc
+</pre>
+
+<p>
+It will prompt you for your WSL password.  The window won't display
+your password when you type it.  When you hit enter, if it's working,
+you should see something like this in the console:
+</p>
+
+<pre class="example" id="org0c13901">
+URIs: https://ppa.launchpadcontent.net/uchicago-dldc/attc/ubuntu/
+Suites: resolute
+Components: main
+'
+More info: https://launchpad.net/~uchicago-dldc/+archive/ubuntu/attc
+Adding repository.
+</pre>
+
+<p>
+And then after that, you should see a bunch of messages about things
+downloading.  Next, type this command:
+</p>
+
+<pre class="example" id="org82c452d">
+sudo apt update
+</pre>
+
+<p>
+That command will check for updates.  Finally, to install <code>attc</code>, type
+this command:
+</p>
+
+<pre class="example" id="orgc601821">
+sudo apt install attc
+</pre>
+
+<p>
+It will print a long message telling you about all the Linux
+dependencies it's going to install, then ask you to confirm by typing
+<code>Y</code> and hitting enter.
+</p>
+
+<p>
+Congratulations.  <code>attc</code> is now installed to your WSL.  Please see our
+</p>
+
+<p>
+<a href="../guide">Guide</a> for instructions on how to use <code>attc</code>.
+</p>
+</div>
+</div>
+<div id="outline-container-org9b1ce66" class="outline-3">
+<h3 id="org9b1ce66"><span class="section-number-3">1.2.</span> macOS</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+On macOS, we recommend installing <code>attc</code> via Homebrew.  
+</p>
+
+<p>
+<b>[ insert instructions for installing homebrew here ]</b>
+</p>
+
+<p>
+<b>[ insert *instructions for dealing with XCode's nonsense + a reminder
+to do a *system update if you haven't done one recently ]</b>
+</p>
+
+<p>
+To install,
+please open your Terminal app and type this command:
+</p>
+
+<pre class="example" id="org7285f9e">
+brew tap uchicago-library/attc
+</pre>
+
+<p>
+This will subscribe you to our UChicago Homebrew package for <code>attc</code>,
+so that you can automatically get updates.  Homebrew may print some
+messages about how it is auto-updating when you run this command.
+Next, please run:
+</p>
+
+<pre class="example" id="orgdcd0b51">
+brew trust --formula uchicago-library/attc/attc
+</pre>
+
+<p>
+This tells Homebrew that you trust our repository, and allows it to go
+ahead with the install.  Finally, type this command to install <code>attc</code>
+to your Mac:
+</p>
+
+<pre class="example" id="org1ac6ddf">
+brew install attc
+</pre>
+
+<p>
+After you type the command, it will ask you to confirm.  Type <code>y</code> to
+confirm.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org81d5dbf" class="outline-2">
+<h2 id="org81d5dbf"><span class="section-number-2">2.</span> Installation <a id="orgddaeff3"></a></h2>
+<div class="outline-text-2" id="text-2">
 <p>
 Once this software is ready for official release, we will be providing
 multiple installation options across as many hardware and OS platforms
@@ -97,20 +232,19 @@ require you to download the source code.
 You can get the latest source straight from our <a href="https://github.com/uchicago-library/attachment-converter">GitHub repository</a>:
 </p>
 
-<pre class="example" id="org17ee06f">
+<pre class="example" id="orgf1fbe58">
 $ cd /path/to/your/source/code
 $ git clone https://github.com/uchicago-library/attachment-converter.git
 </pre>
 </div>
-
-<div id="outline-container-orge747a08" class="outline-3">
-<h3 id="orge747a08"><span class="section-number-3">1.1.</span> Automated Installation</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-org3c082e8" class="outline-3">
+<h3 id="org3c082e8"><span class="section-number-3">2.1.</span> Automated Installation</h3>
+<div class="outline-text-3" id="text-2-1">
 <p>
 Once you have finished downloading the source code, run:
 </p>
 
-<pre class="example" id="org281eb86">
+<pre class="example" id="orgfe7f387">
 $ make home-install
 </pre>
 
@@ -118,7 +252,7 @@ $ make home-install
 At the end of the installation process, you will see a notice saying:
 </p>
 
-<pre class="example" id="org92ee2c9">
+<pre class="example" id="org1c026b6">
 Attachment Converter has been installed to ~/bin/attc.
 Please ensure that ~/bin is on your path.
 </pre>
@@ -131,7 +265,7 @@ You can ensure that the installation worked as intended by the following command
 MacOS:
 </p>
 
-<pre class="example" id="orgda45ab3">
+<pre class="example" id="orgf571020">
 $ echo "export PATH=~/bin:$PATH" &gt;&gt; ~/.zshrc
 </pre>
 
@@ -139,19 +273,18 @@ $ echo "export PATH=~/bin:$PATH" &gt;&gt; ~/.zshrc
 WSL Debian &amp; Arch Linux:
 </p>
 
-<pre class="example" id="org28957cc">
+<pre class="example" id="orgfb294f9">
 $ echo "export PATH=~/bin:$PATH" &gt;&gt; ~/.bashrc
 </pre>
 </div>
 </div>
-
-<div id="outline-container-orgb455073" class="outline-3">
-<h3 id="orgb455073"><span class="section-number-3">1.2.</span> Manual Building</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-org0f4b970" class="outline-3">
+<h3 id="org0f4b970"><span class="section-number-3">2.2.</span> Manual Building</h3>
+<div class="outline-text-3" id="text-2-2">
 </div>
-<div id="outline-container-org053b5a1" class="outline-4">
-<h4 id="org053b5a1"><span class="section-number-4">1.2.1.</span> Install <code>opam</code></h4>
-<div class="outline-text-4" id="text-1-2-1">
+<div id="outline-container-org7c287c3" class="outline-4">
+<h4 id="org7c287c3"><span class="section-number-4">2.2.1.</span> Install <code>opam</code></h4>
+<div class="outline-text-4" id="text-2-2-1">
 <p>
 Attachment Converter is written in <a href="https://ocaml.org/">OCaml</a>, which means that in order to
 build it, you need to install the <code>opam</code> package manager, which we
@@ -163,7 +296,7 @@ example:
 Arch Linux:
 </p>
 
-<pre class="example" id="org72432f3">
+<pre class="example" id="org03a2da8">
 $ pacman -S opam
 </pre>
 
@@ -171,7 +304,7 @@ $ pacman -S opam
 macOS:
 </p>
 
-<pre class="example" id="orgf2d69ce">
+<pre class="example" id="org2b2d66d">
 $ brew install opam
 </pre>
 
@@ -179,7 +312,7 @@ $ brew install opam
 WSL Debian:
 </p>
 
-<pre class="example" id="org4f4094e">
+<pre class="example" id="org92330e6">
 $ apt install opam
 </pre>
 
@@ -188,7 +321,7 @@ Then, regardless of how you install <code>opam</code>, you need to initialize it
 in order to be able to use it.
 </p>
 
-<pre class="example" id="orgff703fe">
+<pre class="example" id="orgfd08f29">
 $ opam init
 $ eval $(opam env)
 </pre>
@@ -205,10 +338,9 @@ installation instructions</a>.
 </p>
 </div>
 </div>
-
-<div id="outline-container-org1df3ea6" class="outline-4">
-<h4 id="org1df3ea6"><span class="section-number-4">1.2.2.</span> Install Mercurial</h4>
-<div class="outline-text-4" id="text-1-2-2">
+<div id="outline-container-org7ca56e2" class="outline-4">
+<h4 id="org7ca56e2"><span class="section-number-4">2.2.2.</span> Install Mercurial</h4>
+<div class="outline-text-4" id="text-2-2-2">
 <p>
 Attachment Converter relies on the Mercurial version control system to
 install some of its third-party library dependencies.  For example:
@@ -218,7 +350,7 @@ install some of its third-party library dependencies.  For example:
 Arch Linux:
 </p>
 
-<pre class="example" id="orgb5d7763">
+<pre class="example" id="org7e9eb41">
 $ pacman -S mercurial
 </pre>
 
@@ -226,7 +358,7 @@ $ pacman -S mercurial
 macOS:
 </p>
 
-<pre class="example" id="org005543e">
+<pre class="example" id="orgb99f167">
 $ brew install mercurial
 </pre>
 
@@ -234,15 +366,14 @@ $ brew install mercurial
 WSL Debian:
 </p>
 
-<pre class="example" id="org0a01e70">
+<pre class="example" id="orgfc3f49c">
 $ apt install mercurial
 </pre>
 </div>
 </div>
-
-<div id="outline-container-org5a1fae4" class="outline-4">
-<h4 id="org5a1fae4"><span class="section-number-4">1.2.3.</span> Install <code>opam</code> dependencies</h4>
-<div class="outline-text-4" id="text-1-2-3">
+<div id="outline-container-org3d688f0" class="outline-4">
+<h4 id="org3d688f0"><span class="section-number-4">2.2.3.</span> Install <code>opam</code> dependencies</h4>
+<div class="outline-text-4" id="text-2-2-3">
 <p>
 To install all third-party library dependencies for Attachment
 Converter to your <code>~/.opam</code> directory (which is where <code>opam</code> put the
@@ -251,7 +382,7 @@ init</code>), please run the following <code>make</code> rule from the root dire
 of the GitHub project you cloned:
 </p>
 
-<pre class="example" id="orgce14e99">
+<pre class="example" id="org874711e">
 $ cd /path/to/your/source/code/attachment-converter
 $ make deps
 </pre>
@@ -265,7 +396,7 @@ fancier option of creating a sandboxed <code>opam</code> switch, you can instead
 run:
 </p>
 
-<pre class="example" id="org693dd31">
+<pre class="example" id="orgee2eabc">
 $ cd /path/to/your/source/code/attachment-converter
 $ make sandbox
 </pre>
@@ -276,10 +407,9 @@ worrying about it and going with the <code>make deps</code> rule.
 </p>
 </div>
 </div>
-
-<div id="outline-container-org2dd549d" class="outline-4">
-<h4 id="org2dd549d"><span class="section-number-4">1.2.4.</span> Install OS-level dependencies</h4>
-<div class="outline-text-4" id="text-1-2-4">
+<div id="outline-container-orge03e8cf" class="outline-4">
+<h4 id="orge03e8cf"><span class="section-number-4">2.2.4.</span> Install OS-level dependencies</h4>
+<div class="outline-text-4" id="text-2-2-4">
 <p>
 Next, you must install Attachment Converter's OS-level dependencies.
 For example:
@@ -288,21 +418,21 @@ For example:
 <p>
 Arch Linux:
 </p>
-<pre class="example" id="org73366e3">
+<pre class="example" id="org43b7c50">
 $ pacman -S libreoffice pandoc libvips ghostscript
 </pre>
 
 <p>
 macOS:
 </p>
-<pre class="example" id="org3821ce7">
+<pre class="example" id="orgdc30212">
 $ brew install libreoffice pandoc vips ghostscript verapdf
 </pre>
 
 <p>
 WSL Debian:
 </p>
-<pre class="example" id="org539ed07">
+<pre class="example" id="org8c10081">
 $ apt install libreoffice pandoc vips ghostscript verapdf
 </pre>
 
@@ -316,7 +446,7 @@ This is a utility for converting PDF to PDF-A-1b.
 Download <code>pdf2archive</code>:
 </p>
 
-<pre class="example" id="org78ac9c0">
+<pre class="example" id="orgf4037c6">
 $ cd /path/to/your/source/code
 $ git clone git@github.com:matteosecli/pdf2archive.git
 $ cd pdf2archive
@@ -325,10 +455,9 @@ $ export PATH=$PATH:/path/to/your/source/code/pdf2archive
 </pre>
 </div>
 </div>
-
-<div id="outline-container-org121cade" class="outline-4">
-<h4 id="org121cade"><span class="section-number-4">1.2.5.</span> Copy shell scripts to standard location</h4>
-<div class="outline-text-4" id="text-1-2-5">
+<div id="outline-container-org80ebed0" class="outline-4">
+<h4 id="org80ebed0"><span class="section-number-4">2.2.5.</span> Copy shell scripts to standard location</h4>
+<div class="outline-text-4" id="text-2-2-5">
 <p>
 In our current pre-alpha stage, the shell scripts that Attachment
 Converter uses to invoke external conversion utilities are expected to
@@ -337,22 +466,21 @@ we flesh out our installation story.  For this next step, please copy
 them to that location:
 </p>
 
-<pre class="example" id="org425f178">
+<pre class="example" id="org081bdfe">
 $ cd /path/to/your/source/code/attachment-converter
 $ mkdir -p ~/.config/attachment-converter/scripts
 $ cp conversion-scripts/*.sh ~/.config/attachment-converter/scripts
 </pre>
 </div>
 </div>
-
-<div id="outline-container-org83c45b9" class="outline-4">
-<h4 id="org83c45b9"><span class="section-number-4">1.2.6.</span> Time to Build</h4>
-<div class="outline-text-4" id="text-1-2-6">
+<div id="outline-container-org0fbe402" class="outline-4">
+<h4 id="org0fbe402"><span class="section-number-4">2.2.6.</span> Time to Build</h4>
+<div class="outline-text-4" id="text-2-2-6">
 <p>
 You should now be ready to build Attachment Converter.  To build:
 </p>
 
-<pre class="example" id="orgcfaf580">
+<pre class="example" id="org8db5585">
 $ cd /path/to/your/source/code/attachment-converter
 $ make
 </pre>
@@ -362,7 +490,7 @@ You can then install Attachment Converter by copying the binary to
 wherever you keep your binaries:
 </p>
 
-<pre class="example" id="orgd10ce3c">
+<pre class="example" id="org858fd73">
 $ cd /path/to/your/source/code/attachment-converter
 $ mv _build/default/main.exe /path/to/your/binaries/attc
 </pre>
@@ -370,20 +498,19 @@ $ mv _build/default/main.exe /path/to/your/binaries/attc
 </div>
 </div>
 </div>
-
-<div id="outline-container-orge94df2d" class="outline-2">
-<h2 id="orge94df2d"><span class="section-number-2">2.</span> Advanced Concepts</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-orgeb8b5f8" class="outline-2">
+<h2 id="orgeb8b5f8"><span class="section-number-2">3.</span> Advanced Concepts</h2>
+<div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org4202297" class="outline-3">
-<h3 id="org4202297"><span class="section-number-3">2.1.</span> Conversion Customization</h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-org8fa0eba" class="outline-3">
+<h3 id="org8fa0eba"><span class="section-number-3">3.1.</span> Conversion Customization</h3>
+<div class="outline-text-3" id="text-3-1">
 <p>
 Coming soon&#x2026;
 </p>
 
 
-<div id="org87c1da0" class="figure">
+<div id="orgc13affa" class="figure">
 <p><a href="./index.html" id="back-to-top"><img src="../images/back_to_top.svg" alt="back_to_top.svg" class="org-svg" id="back-to-top" /></a>
 </p>
 </div>
@@ -393,7 +520,7 @@ Coming soon&#x2026;
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Matt Teichman</p>
-<p class="date">Created: 2023-08-24 Thu 16:09</p>
+<p class="date">Created: 2026-07-23 Thu 11:27</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
