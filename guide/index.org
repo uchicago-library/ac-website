@@ -1,5 +1,5 @@
 # -*- mode: org; coding: utf-8; -*-
-#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/setup/html-theme-readtheorg.setup
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/og_rto.css" />
 #+HTML_HEAD: <link rel="preconnect" href="https://fonts.googleapis.com">
 #+HTML_HEAD: <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
