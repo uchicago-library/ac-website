@@ -86,7 +86,7 @@ messages about how it is auto-updating when you run this command.
 Next, please run:
 
 #+begin_example
-  brew trust --formula uchicago-library/attc/attc
+  brew trust uchicago-library/attc
 #+end_example
 
 This tells Homebrew that you trust our repository, and allows it to go
@@ -103,7 +103,10 @@ the screen, and then at the end you'll see a message telling you to
 run this command:
 
 #+begin_example
+  Attachment Converter depends on LibreOffice for some functionality.
 
+  Please install it using:
+    brew install --cask libreoffice
 #+end_example
 
 This command installs LibreOffice, which is what Attachment Converter
