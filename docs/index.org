@@ -16,22 +16,37 @@
 #+Title: Docs | Attachment Converter
 
 * Installation
+Attachment Converter (=attc=) is available for Arch Linux, Ubuntu,
+macOS, and Windows (via the Ubuntu WSL).  Please see below for
+installation instructions.
+
 ** Windows
 There is no native Windows version of =attc=, but we maintain a
-version for Ubuntu 26.04.  To install =attc= via the Ubuntu WSL on
-your Windows machine:
+version for Ubuntu version 26.04.  This allows you to run =attc= under
+Ubuntu in your Windows Subsystem for Linux.
 
-*[ insert instructions for installing WSL here ]*
+These instructions assume that you have Ubuntu WSL set up on your
+Windows machine.  For a good guide to getting that set up, please
+consult these resources:
 
-To install, please open up a fresh WSL terminal and type this command.
++ https://ubuntu.com/wsl/docs/stable/howto/install-ubuntu-wsl2/
++ https://www.youtube.com/watch?v=9gT6vO_W6x0
+
+With your WSL set up, you can install =attc= by opening up a fresh WSL
+terminal and typing this command:
 
 #+begin_example
   sudo add-apt-repository ppa:uchicago-dldc/attc
 #+end_example
 
-It will prompt you for your WSL password.  The window won't display
-your password when you type it.  When you hit enter, if it's working,
-you should see something like this in the console:
+The purpose of this command is to make all of our
+[[https://uchicago-library.github.io/][Digital Library Development
+Center]] software packages avaiable for you to install, and it will
+prompt you for your WSL password.  (Note that as you type your
+password, you won't see anything appear on the screen, but you should
+assume your password is being typed, and hit enter when you're done.)
+When you hit enter, if it's working, you should see a number of
+messages go by, including something that looks like this:
 
 #+begin_example
   URIs: https://ppa.launchpadcontent.net/uchicago-dldc/attc/ubuntu/
@@ -42,8 +57,8 @@ you should see something like this in the console:
   Adding repository.
 #+end_example
 
-And then after that, you should see a bunch of messages about things
-downloading.  Next, type this command:
+After that, you should see a series of messages about software
+packages downloading.  Next, type this command:
 
 #+begin_example
   sudo apt update
@@ -56,32 +71,39 @@ this command:
   sudo apt install attc
 #+end_example
 
-It will print a long message telling you about all the Linux
-dependencies it's going to install, then ask you to confirm by typing
-=Y= and hitting enter.
+It will print a long message telling you about all the Linux software
+packages it's going to install, then ask you to confirm by typing =Y=
+and hitting enter.
 
-Congratulations.  =attc= is now installed to your WSL.  Please see our
-
+Congratulations!  =attc= is now installed to your WSL.  Please see our
 [[../guide][Guide]] for instructions on how to use =attc=.
 
 ** macOS
 
-On macOS, we recommend installing =attc= via Homebrew.  
+On macOS, we recommend installing =attc= via our
+[[https://uchicago-library.github.io/][Digital Library Development
+Center]] Homebrew tap.  If you don't have Hombrew installed on your
+Mac, we recommend first doing these two things:
 
-*[ insert instructions for installing homebrew here ]*
++ do a full macOS update
++ open a macOS Terminal and run the command =xcode-select --install=
 
-*[ insert *instructions for dealing with XCode's nonsense + a reminder
-to do a *system update if you haven't done one recently ]*
+With that out of the way, please see this website for instructions on
+how to install Homebrew:
 
-To install,
-please open your Terminal app and type this command:
++ https://brew.sh/
+
+With Homebrew set up, to install =attc=, please open your macOS
+Terminal app and type this command:
 
 #+begin_example
   brew tap uchicago-library/attc
 #+end_example
 
-This will subscribe you to our UChicago Homebrew package for =attc=,
-so that you can automatically get updates.  Homebrew may print some
+That will subscribe you to our
+[[https://uchicago-library.github.io/][Digital Library Development
+Center]] Homebrew tap for =attc=, so that you can install it in one
+command and easily get updates afterward.  Homebrew may print some
 messages about how it is auto-updating when you run this command.
 Next, please run:
 
@@ -89,9 +111,9 @@ Next, please run:
   brew trust uchicago-library/attc
 #+end_example
 
-This tells Homebrew that you trust our repository, and allows it to go
-ahead with the install.  Next, type this command to install =attc= to
-your Mac:
+This tells Homebrew that you trust our website for distributing the
+application, and allows it to proceed with the install.  Next, type
+this command to install =attc= to your Mac:
 
 #+begin_example
   brew install attc
@@ -109,69 +131,71 @@ run this command:
     brew install --cask libreoffice
 #+end_example
 
-This command installs LibreOffice, which is what Attachment Converter
-uses to convert =.doc= file attachments in email.
+That last =brew install= command installs LibreOffice, which is what
+Attachment Converter uses to convert =.doc= file attachments in email.
 
-* Installation <<install>>
+Congratulations!  =attc= is now installed on your Mac.  Please see our
+[[../guide][Guide]] for instructions on how to use =attc=.
 
-Once this software is ready for official release, we will be providing
-multiple installation options across as many hardware and OS platforms
-as we can.  Currently, however, the only way to install the project is
-to build it from source, which you probably only realistically want to
-attempt if you're either a developer or a system administrator.  These
-instructions are currently undergoing heavy revision, so if you try
-them out and experience any difficulties, please don't hesitate to
-contact us.  User feedback at this stage is incredibly valuable.
+** Arch Linux
 
-For ordinary users, we intend to make Attachment Converter available
-to install via one of the standard package managers and also directly
-as a binary upon its first release.  Please check back later this year
-for updates!
-
-As we work toward our first release, here are instructions for
-building Attachment Converter from source and then installing it.
-
-We have two available installation methods: an automated process
-using a =GNUmakefile= and a manual process. Either method will
-require you to download the source code.
-
-You can get the latest source straight from our [[https://github.com/uchicago-library/attachment-converter][GitHub repository]]:
+=attc= is not currently available via the AUR, but if you are using
+Arch Linux and would like to install it, you can do so via our
+[[https://uchicago-library.github.io/][DLDC]] Arch Linux software
+repository.  First, add the following to your =/etc/pacman.conf=:
 
 #+begin_example
-  $ cd /path/to/your/source/code
-  $ git clone https://github.com/uchicago-library/attachment-converter.git
+  [dldc]
+  SigLevel = Optional TrustAll
+  Server = http://dldc.lib.uchicago.edu/open/repos/arch
 #+end_example
 
-** Automated Installation
-
-Once you have finished downloading the source code, run:
+Then refresh your package databases:
 
 #+begin_example
-  $ make home-install
+  pacman -Syy
 #+end_example
 
-At the end of the installation process, you will see a notice saying:
+That will make =pacman= aware of our software repository.  When you
+run the =-Syy=, =pacman= will ask you to confirm that you trust our
+public key.  The key it displays should be this:
 
 #+begin_example
-  Attachment Converter has been installed to ~/bin/attc.
-  Please ensure that ~/bin is on your path.
+  3EF45886DF1EF82B4782F5FBD331DB7453444E0E
 #+end_example
 
-You can ensure that the installation worked as intended by the following command.
-
-MacOS:
+Once you have confirmed that you would like to add our repository, you
+can install =attc= in the usual way:
 
 #+begin_example
-  $ echo "export PATH=~/bin:$PATH" >> ~/.zshrc
+  pacman -S attc
 #+end_example
 
-WSL Debian & Arch Linux:
+Congratulations!  =attc= is now installed on your Arch box.  Please
+see our [[../guide][Guide]] for instructions on how to use =attc=.
+
+* Advanced Installation Options
+
+Although the above three options should work for most users on our
+three supported platforms, power users may prefer to install =attc= in
+other ways.
+
+** =.deb= package
+
+If you are on Ubuntu but our PPA doesn't suit your needs, for whatever
+reason, you can find a =.deb= pacakge for =attc= [[https://dldc.lib.uchicago.edu/open/dist/attc/attc_0.2.12-1~resolute_amd64.deb][here]].  To download:
 
 #+begin_example
-  $ echo "export PATH=~/bin:$PATH" >> ~/.bashrc
+  wget https://dldc.lib.uchicago.edu/open/dist/attc/attc_0.2.12-1~resolute_amd64.deb
 #+end_example
 
-** Manual Building
+To install:
+
+#+begin_example
+  apt install ./attc_0.2.12-1~resolute_amd64.deb
+#+end_example
+
+** Building From Source
 
 *** Install =opam=
 
@@ -213,28 +237,6 @@ That should be enough to get you going, but if you'd like more
 detailed information on how to install =opam=, please see [[http://opam.ocaml.org/doc/Install.html#Using-your-distribution-39-s-package-system][the official
 installation instructions]].
 
-*** Install Mercurial
-
-Attachment Converter relies on the Mercurial version control system to
-install some of its third-party library dependencies.  For example:
-
-Arch Linux:
-
-#+begin_example
-  $ pacman -S mercurial
-#+end_example
-
-macOS:
-
-#+begin_example
-  $ brew install mercurial
-#+end_example
-
-WSL Debian:
-
-#+begin_example
-  $ apt install mercurial
-#+end_example
 
 *** Install =opam= dependencies
 
@@ -249,7 +251,7 @@ of the GitHub project you cloned:
   $ make deps
 #+end_example
 
-This will make the Digital Library Development Center's very own
+This will make the [[https://uchicago-library.github.io/][Digital Library Development Center]]'s very own
 =opam= repository available to you, then install all of Attachment
 Converter's third-party library dependencies.  =make deps= should
 suffice for most purposes, but if you'd like to pursue the slightly
@@ -271,40 +273,28 @@ For example:
 
 Arch Linux:
 #+begin_example
-  $ pacman -S libreoffice pandoc libvips ghostscript
+  $ pacman -S libreoffice pandoc libvips ghostscript poppler
 #+end_example
 
 macOS:
 #+begin_example
-  $ brew install libreoffice pandoc vips ghostscript verapdf
+  $ brew install libreoffice pandoc vips ghostscript verapdf poppler
 #+end_example
 
 WSL Debian:
 #+begin_example
-  $ apt install libreoffice pandoc vips ghostscript verapdf
-#+end_example
-
-Finally, Attachment Converter has one OS-level dependency that is not
-available through the standard repositories, called [[https://github.com/matteosecli/pdf2archive][=pdf2archive=]].
-This is a utility for converting PDF to PDF-A-1b.
-
-Download =pdf2archive=:
-
-#+begin_example
-  $ cd /path/to/your/source/code
-  $ git clone git@github.com:matteosecli/pdf2archive.git
-  $ cd pdf2archive
-  $ chmod +x ./pdf2archive
-  $ export PATH=$PATH:/path/to/your/source/code/pdf2archive
+  $ apt install libreoffice pandoc vips ghostscript verapdf poppler-utils
 #+end_example
 
 *** Copy shell scripts to standard location
 
-In our current pre-alpha stage, the shell scripts that Attachment
-Converter uses to invoke external conversion utilities are expected to
-be located at a specific filepath.  This is expected to change soon as
-we flesh out our installation story.  For this next step, please copy
-them to that location:
+The shell scripts that Attachment Converter uses to invoke external
+conversion utilities are expected to be located at one of several
+specific filepaths.  If you install =attc= via a package manager, the
+package manager will copy these shell scripts to whatever your host
+OS's preferred path to executable artefacts is.  However, given that
+this is a manual installation, the best option is to place them in
+your home directory:
 
 #+begin_example
   $ cd /path/to/your/source/code/attachment-converter
@@ -326,14 +316,8 @@ wherever you keep your binaries:
 
 #+begin_example
   $ cd /path/to/your/source/code/attachment-converter
-  $ mv _build/default/main.exe /path/to/your/binaries/attc
+  $ install -m 755 _build/default/main.exe /path/to/your/binaries/attc
 #+end_example
-
-* Advanced Concepts
-
-** Conversion Customization
-
-Coming soon...
 
 #+ATTR_HTML: :id back-to-top
 [[./index.html][file:../images/back_to_top.svg]]
