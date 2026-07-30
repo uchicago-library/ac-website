@@ -5,6 +5,7 @@
 #+HTML_HEAD: <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 #+HTML_HEAD: <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
 #+HTML_HEAD: <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+#+OPTIONS: toc:nil
 
 #+ATTR_HTML: :class attc-logo
 [[../index.org][file:../images/attc_logo.svg]]
@@ -19,15 +20,13 @@
 
 ** About Attachment Converter
 
-Attachment Converter is an open-source command-line
-tool for digital archivists. Given an email mailbox
-in [[https://en.wikipedia.org/wiki/Mbox][MBOX]] format, it will go through that mailbox and
-batch convert all the attachments it can into
-preservation formats, putting a converted copy of
-each attachment back into the email from which it
-originated. The user can then re-open the new
-mailbox in a mail user agent, such as [[https://en.wikipedia.org/wiki/Apple_Mail][Apple Mail]],
-and browse through the mailbox the normal way.
+Attachment Converter is an open-source command-line tool for digital
+archivists. Given an email mailbox in [[https://en.wikipedia.org/wiki/Mbox][MBOX]] format, it will go through
+that mailbox and batch convert all the attachments it can into
+preservation formats, putting a converted copy of each attachment back
+into the email from which it originated. The user can then re-open the
+new mailbox in a mail user agent, such as [[https://en.wikipedia.org/wiki/Apple_Mail][Apple Mail]], and browse
+through the mailbox the normal way.
 
 ** MBOX Files
 
