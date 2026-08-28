@@ -16,6 +16,23 @@
 #+Author: Matt Teichman
 #+Title: Guide | Attachment Converter
 
+* Possible New Structure
++ quickstart
++ completely separate instructions for each OS
++ how to find your MBOX files
+  + Windows
+    + example: =C:\Users\teichman\Downloads= becomes
+      =/mnt/c/Users/teichman/Downloads=
+    + recommend the open source tool for viewing MBOXes that Matt
+      found
+  + macOS
+    + =cd ~/Downloads=
+    + make sure to include a detailed explanation of the song and
+      dance required to open MBOXes in Apple Mail
+  + Linux
+    + you guy got this
++ how to run =attc=
+
 * Introduction
 
 ** About Attachment Converter
@@ -37,12 +54,16 @@ as a supported inbox file format. If your inbox file is
 already in the =.mbox= format, then skip to the *"Basic*
 *Commands"* section.
 
-If you have an Outlook =.pst= file, we have found [[https://www.five-ten-sg.com/libpst/][Libpst]]
-to be a useful utility for performing that conversion. Once
+If you have an Outlook =.pst= file, we have found [[https://github.com/pst-format/libpst/][Libpst]]
+to be a useful utility for performing that conversion.
+
+( INCLUDE A LINK TO SOMETHING THAT EXPLAINS HOW TO INSTALL LIBPST )
+
+Once
 installed, you can run:
 
 #+begin_example
-  $ readpst example.pst
+  readpst example.pst
 #+end_example
 
 For other file formats, please be sure to find a utility
@@ -55,20 +76,32 @@ here is how to use it in the command line. If you
 have not started the installation process, click
 [[../][here]].
 
+( INSERT A SECTION HERE ON HOW TO GET WSL TO SEE A FILE IN THE WINDOWS
+FILESYTEM. )
+
 ** Batch Inbox Conversion
 
-By default, =attc= will expect an inbox file =.mbox=
-and will batch convert any attachments within an email
-in the inbox. For ease of use, =cd= into the directory
-containing your inbox file and run:
+By default, =attc= will expect an inbox file =.mbox= and will batch
+convert any attachments within an email in the inbox. For ease of use,
+=cd= into the directory containing your inbox file.  Then, assuming
+your MBOX file is called =example.mbox=, you would run this command:
 
 #+begin_example
-  $ attc < example.mbox > example-converted.mbox
+  attc < example.mbox > example-converted.mbox
 #+end_example
 
-Running this command creates a new inbox file. Inside
-the converted emails, you will find both the original
-file and the converted file attached to the email.
+Running this command creates a new inbox file. Inside the converted
+emails, you will find both the original file and the converted file
+attached to the email.  Now you can open the folder you went to in
+Windows Explorer, and you should see a new file in that folder called
+=example-converted.mbox=.
+
+( INSERT SECTION ABOUT HOW TO OPEN AN MBOX HERE. )
+
+( MAYBE INCLUDE A LINK TO THE OPEN-SOURCE APP MATT FOUND FOR OPENING
+MBOXES. )
+
+( REMINDER TO INVESTIGATE THE EPADD WEIRDNESS INGESTING MBOXES. )
 
 ** Single-Email Conversion
 
@@ -76,7 +109,7 @@ To simply convert the attachments within one email file
 =.eml=, run:
 
 #+begin_example
-  $ attc --single-email < example-email.eml > example-email-converted.eml
+  attc --single-email < example-email.eml > example-email-converted.eml
 #+end_example
 
 You can also replace =--single-email= with its shorter name =-s=.
@@ -92,7 +125,7 @@ the total number of files that match each [[https://en.wikipedia.org/wiki/Media_
 To run a report on an inbox file =.mbox=, run:
 
 #+begin_example
-  $ attc --report < example.mbox
+  attc --report < example.mbox
 #+end_example
 
 Your report will ressemble the following:

@@ -32,17 +32,17 @@ consult these resources:
 + https://ubuntu.com/wsl/docs/stable/howto/install-ubuntu-wsl2/
 + https://www.youtube.com/watch?v=9gT6vO_W6x0
 
-With your WSL set up, you can install =attc= by opening up a fresh WSL
-terminal and typing this command:
+After you finish setting your WSL up, it will log you into your new
+Linux subsystem autoamtically.  You should see the prompt change color
+into being green and blue.  Then, type this command and hit enter:
 
 #+begin_example
   sudo add-apt-repository ppa:uchicago-dldc/attc
 #+end_example
 
-The purpose of this command is to make all of our
-[[https://uchicago-library.github.io/][Digital Library Development
-Center]] software packages avaiable for you to install, and it will
-prompt you for your WSL password.  (Note that as you type your
+The purpose of this command is to make all of our [[https://uchicago-library.github.io/][Digital Library
+Development Center]] software packages avaiable for you to install, and
+it will prompt you for your WSL password.  (Note that as you type your
 password, you won't see anything appear on the screen, but you should
 assume your password is being typed, and hit enter when you're done.)
 When you hit enter, if it's working, you should see a number of
@@ -57,7 +57,8 @@ messages go by, including something that looks like this:
   Adding repository.
 #+end_example
 
-After that, you should see a series of messages about software
+After you run that command, it will ask you to hit enter to continue.
+Hit enter.  Next, you should see a series of messages about software
 packages downloading.  Next, type this command:
 
 #+begin_example
@@ -73,10 +74,13 @@ this command:
 
 It will print a long message telling you about all the Linux software
 packages it's going to install, then ask you to confirm by typing =Y=
-and hitting enter.
+and hitting enter.  After you hit enter, you should see some more
+messages get printed, and a progress bar on the bottom of the screen.
+Installation should take about 2-5 minutes, depending on how fast your
+computer and network connection are.
 
 Congratulations!  =attc= is now installed to your WSL.  Please see our
-[[../guide][Guide]] for instructions on how to use =attc=.
+[[../guide][Guide]] for instructions on how to use =attc=.  
 
 ** macOS
 
