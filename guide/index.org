@@ -32,6 +32,9 @@
   + Linux
     + you guy got this
 + how to run =attc=
++ point out that you can run the =--report= option to quickly confirm
+  that some conversions happened without having to actually open the
+  output
 
 * Introduction
 
