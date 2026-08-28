@@ -35,6 +35,22 @@
 + point out that you can run the =--report= option to quickly confirm
   that some conversions happened without having to actually open the
   output
+  + "you should see an increase in some of the formats"
+  + for example, here (in =iPres-example-converted.mbox=) we see an
+    increase in pdfs and plaintext attachments
++ we have two different options for processing email, one more
+  forgiving and one less forgiving; by default, =attc= uses the more
+  forgiving one
++ but if you want to try the less forgiving and more technically
+  correct one, you can add the =--backend=mrmime= option
++ whoopsie, nonexistent link to the instructions for help creating
+  custom conversion
++ just delete this section
++ maybe we should add a section for power users
++ so both the backend option and the custom conversions option could
+  go in there
++ we'll wait till the 0.3 release to add the =--print-config= option
+  and instructions on how to create your own custom conversion
 
 * Introduction
 
@@ -174,12 +190,6 @@ Below are the conversions that =attc= supports:
 | =.gif=  |   TIFF (=.tif=)    |
 | =.bmp=  |   TIFF (=.tif=)    |
 | =.jpg=  |   TIFF (=.tif=)    |
-
-Source files represent the inputs and target files
-represent the outputs that =attc= supports. Attachment
-Converter supports configurations to customize the
-conversions that it can perform. Click *here* for the
-instructions to do so.
 
 #+ATTR_HTML: :id back-to-top
 [[./][file:../images/back_to_top.svg]]
